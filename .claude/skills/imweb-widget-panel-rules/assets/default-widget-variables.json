@@ -1,0 +1,7068 @@
+[
+ {
+  "code": "cw202605200326d56a597e5",
+  "title": "리뷰 카드",
+  "variables": {
+   "아이템": {
+    "opened": false,
+    "children": {
+     "item-reviews": {
+      "type": "item",
+      "label": "리뷰 카드 아이템",
+      "fields": {
+       "image-avatar": {
+        "type": "image",
+        "label": "프로필 이미지"
+       },
+       "text-author": {
+        "type": "textfield",
+        "label": "닉네임",
+        "placeholder": "닉네임"
+       },
+       "select-rating": {
+        "type": "select",
+        "label": "별점",
+        "values": [
+         "0",
+         "0.5",
+         "1",
+         "1.5",
+         "2",
+         "2.5",
+         "3",
+         "3.5",
+         "4",
+         "4.5",
+         "5"
+        ],
+        "valueNames": [
+         "0",
+         "0.5",
+         "1",
+         "1.5",
+         "2",
+         "2.5",
+         "3",
+         "3.5",
+         "4",
+         "4.5",
+         "5"
+        ]
+       },
+       "editor-content": {
+        "type": "text-editor",
+        "label": "내용"
+       }
+      },
+      "default": [
+       {
+        "image-avatar": "",
+        "text-author": "",
+        "select-rating": "",
+        "editor-content": ""
+       },
+       {
+        "image-avatar": "",
+        "text-author": "",
+        "select-rating": "",
+        "editor-content": ""
+       },
+       {
+        "image-avatar": "",
+        "text-author": "",
+        "select-rating": "",
+        "editor-content": ""
+       }
+      ]
+     }
+    }
+   },
+   "이미지": {
+    "opened": false,
+    "children": {
+     "text-avatar-size": {
+      "type": "textfield",
+      "label": "프로필 크기",
+      "suffix": "px",
+      "placeholder": "30"
+     }
+    }
+   },
+   "텍스트": {
+    "opened": false,
+    "children": {
+     "text-name-size": {
+      "type": "textfield",
+      "label": "닉네임 크기",
+      "suffix": "px",
+      "placeholder": "30"
+     },
+     "color-name": {
+      "type": "color",
+      "label": "닉네임 컬러"
+     },
+     "text-content-size": {
+      "type": "textfield",
+      "label": "내용 크기",
+      "suffix": "px",
+      "placeholder": "30"
+     },
+     "color-content": {
+      "type": "color",
+      "label": "내용 컬러"
+     }
+    }
+   },
+   "별점": {
+    "opened": false,
+    "children": {
+     "text-star-size": {
+      "type": "textfield",
+      "label": "별점 크기 ",
+      "suffix": "px",
+      "placeholder": "30"
+     },
+     "color-star": {
+      "type": "color",
+      "label": "별점 컬러"
+     },
+     "color-star-base": {
+      "type": "color",
+      "label": "별점 베이스 컬러"
+     },
+     "color-star-border": {
+      "type": "color",
+      "label": "별점 테두리 컬러"
+     },
+     "text-star-border-width": {
+      "type": "textfield",
+      "label": "별점 테두리 두께",
+      "suffix": "px",
+      "placeholder": "0"
+     }
+    }
+   },
+   "배경": {
+    "opened": false,
+    "children": {
+     "color-card-bg": {
+      "type": "color",
+      "label": "배경 컬러"
+     },
+     "color-card-border": {
+      "type": "color",
+      "label": "테두리 컬러"
+     },
+     "text-card-border-width": {
+      "type": "textfield",
+      "label": "선 두께",
+      "suffix": "px",
+      "placeholder": "0"
+     }
+    }
+   },
+   "레이아웃": {
+    "opened": false,
+    "children": {
+     "text-block-gap": {
+      "type": "textfield",
+      "label": "상단·하단 간격",
+      "suffix": "px",
+      "placeholder": "16"
+     },
+     "text-card-pad-y": {
+      "type": "textfield",
+      "label": "카드 내부 상하 여백",
+      "suffix": "px",
+      "placeholder": "16"
+     },
+     "text-card-pad-x": {
+      "type": "textfield",
+      "label": "카드 내부 좌우 여백 ",
+      "suffix": "px",
+      "placeholder": "16"
+     },
+     "text-card-gap": {
+      "type": "textfield",
+      "label": "카드 간 간격",
+      "suffix": "px",
+      "placeholder": "8"
+     }
+    }
+   },
+   "롤링 애니메이션": {
+    "opened": false,
+    "children": {
+     "text-transition": {
+      "type": "textfield",
+      "label": "전환 속도",
+      "suffix": "초",
+      "placeholder": "0.3"
+     },
+     "segment-direction": {
+      "type": "segment",
+      "label": "방향",
+      "values": [
+       "left",
+       "right"
+      ],
+      "valueNames": [
+       "←",
+       "→"
+      ]
+     },
+     "switch-hover-pause": {
+      "type": "switch",
+      "label": "마우스 오버 시 정지"
+     }
+    }
+   },
+   "등장 애니메이션": {
+    "opened": false,
+    "children": {
+     "select-anim": {
+      "type": "select",
+      "label": "스타일",
+      "values": [
+       "none",
+       "fade",
+       "slide-up",
+       "slide-down",
+       "slide-left",
+       "slide-right",
+       "zoom-in"
+      ],
+      "valueNames": [
+       "없음",
+       "페이드",
+       "슬라이드인-업",
+       "슬라이드인-다운",
+       "슬라이드인-왼쪽",
+       "슬라이드인-오른쪽",
+       "줌-인"
+      ]
+     },
+     "text-animduration": {
+      "type": "textfield",
+      "label": "지속 시간",
+      "suffix": "초",
+      "placeholder": "0.7"
+     },
+     "text-animdelay": {
+      "type": "textfield",
+      "label": "지연 시간",
+      "suffix": "초",
+      "placeholder": "0"
+     }
+    }
+   }
+  }
+ },
+ {
+  "code": "cw202605201d2078bc4efff",
+  "title": "라인 아코디언",
+  "variables": {
+   "아이템": {
+    "opened": false,
+    "children": {
+     "items": {
+      "type": "item",
+      "label": "아코디언",
+      "fields": {
+       "title": {
+        "type": "textfield",
+        "label": "타이틀",
+        "placeholder": "타이틀 문구 입력"
+       },
+       "content": {
+        "type": "text-editor",
+        "label": "내용"
+       }
+      },
+      "default": [
+       {
+        "title": "",
+        "content": ""
+       },
+       {
+        "title": "",
+        "content": ""
+       },
+       {
+        "title": "",
+        "content": ""
+       }
+      ]
+     }
+    }
+   },
+   "텍스트": {
+    "opened": false,
+    "children": {
+     "title-size": {
+      "type": "textfield",
+      "label": "타이틀 크기",
+      "suffix": "px"
+     },
+     "title-color": {
+      "type": "color",
+      "label": "타이틀 컬러"
+     },
+     "content-size": {
+      "type": "textfield",
+      "label": "내용 크기",
+      "suffix": "px"
+     },
+     "content-color": {
+      "type": "color",
+      "label": "내용 컬러"
+     }
+    }
+   },
+   "아이콘": {
+    "opened": false,
+    "children": {
+     "icon-type": {
+      "type": "segment",
+      "label": "형태",
+      "values": [
+       "plus",
+       "chevron"
+      ],
+      "valueNames": [
+       "+",
+       "^"
+      ]
+     },
+     "icon-color": {
+      "type": "color",
+      "label": "아이콘 컬러"
+     }
+    }
+   },
+   "선": {
+    "opened": false,
+    "children": {
+     "border-color": {
+      "type": "color",
+      "label": "선 컬러"
+     },
+     "border-width": {
+      "type": "textfield",
+      "label": "선 두께",
+      "suffix": "px"
+     }
+    }
+   },
+   "배경": {
+    "opened": false,
+    "children": {
+     "title-bg": {
+      "type": "color",
+      "label": "타이틀 배경 컬러"
+     },
+     "content-bg": {
+      "type": "color",
+      "label": "내용 배경 컬러"
+     }
+    }
+   },
+   "레이아웃": {
+    "opened": false,
+    "children": {
+     "title-padding-v": {
+      "type": "textfield",
+      "label": "타이틀 내부 상하 여백",
+      "suffix": "px"
+     },
+     "title-padding-h": {
+      "type": "textfield",
+      "label": "타이틀 내부 좌우 여백",
+      "suffix": "px"
+     },
+     "content-padding-top": {
+      "type": "textfield",
+      "label": "내용 내부 상 여백",
+      "suffix": "px"
+     },
+     "content-padding-bottom": {
+      "type": "textfield",
+      "label": "내용 내부 하 여백",
+      "suffix": "px"
+     },
+     "content-padding-h": {
+      "type": "textfield",
+      "label": "내용 내부 좌우 여백",
+      "suffix": "px"
+     }
+    }
+   },
+   "동작": {
+    "opened": true,
+    "children": {
+     "switch-single-open": {
+      "type": "switch",
+      "label": "한 번에 하나만 열기"
+     },
+     "select-initial-open": {
+      "type": "select",
+      "label": "초기 펼침 상태",
+      "values": [
+       "all",
+       "first",
+       "none"
+      ],
+      "valueNames": [
+       "전체 펼침",
+       "첫번째만 펼침",
+       "전체 닫힘"
+      ]
+     }
+    }
+   },
+   "등장 애니메이션": {
+    "opened": false,
+    "children": {
+     "anim-style": {
+      "type": "select",
+      "label": "스타일",
+      "values": [
+       "none",
+       "fade",
+       "slide-up",
+       "slide-down",
+       "slide-left",
+       "slide-right",
+       "zoom-in"
+      ],
+      "valueNames": [
+       "없음",
+       "페이드",
+       "슬라이드인-업",
+       "슬라이드인-다운",
+       "슬라이드인-왼쪽",
+       "슬라이드인-오른쪽",
+       "줌-인"
+      ]
+     },
+     "anim-duration": {
+      "type": "textfield",
+      "label": "지속 시간",
+      "suffix": "초"
+     },
+     "anim-delay": {
+      "type": "textfield",
+      "label": "지연 시간",
+      "suffix": "초"
+     }
+    }
+   }
+  }
+ },
+ {
+  "code": "cw202605202543195176d2e",
+  "title": "다중 이미지 슬라이드",
+  "variables": {
+   "아이템": {
+    "opened": false,
+    "children": {
+     "item-slides": {
+      "type": "item",
+      "label": "롤링 아이템",
+      "fields": {
+       "image-slide": {
+        "type": "image",
+        "label": "슬라이드 이미지"
+       },
+       "editor-title": {
+        "type": "text-editor",
+        "label": "타이틀"
+       },
+       "editor-subtitle": {
+        "type": "text-editor",
+        "label": "서브텍스트"
+       },
+       "color-item-overlay": {
+        "type": "color",
+        "label": "음영 색상"
+       },
+       "text-link": {
+        "type": "textfield",
+        "label": "링크 URL",
+        "placeholder": "https://example.com"
+       },
+       "switch-newtab": {
+        "type": "switch",
+        "label": "새 창으로 열기"
+       },
+       "date-start": {
+        "type": "date",
+        "label": "시작 날짜"
+       },
+       "time-start": {
+        "type": "time",
+        "label": "시작 시간"
+       },
+       "date-end": {
+        "type": "date",
+        "label": "종료 날짜"
+       },
+       "time-end": {
+        "type": "time",
+        "label": "종료 시간"
+       }
+      },
+      "default": [
+       {
+        "image-slide": "",
+        "editor-title": "",
+        "editor-subtitle": "",
+        "color-item-overlay": "",
+        "text-link": "",
+        "switch-newtab": false,
+        "date-start": "",
+        "time-start": "",
+        "date-end": "",
+        "time-end": ""
+       },
+       {
+        "image-slide": "",
+        "editor-title": "",
+        "editor-subtitle": "",
+        "color-item-overlay": "",
+        "text-link": "",
+        "switch-newtab": false,
+        "date-start": "",
+        "time-start": "",
+        "date-end": "",
+        "time-end": ""
+       },
+       {
+        "image-slide": "",
+        "editor-title": "",
+        "editor-subtitle": "",
+        "color-item-overlay": "",
+        "text-link": "",
+        "switch-newtab": false,
+        "date-start": "",
+        "time-start": "",
+        "date-end": "",
+        "time-end": ""
+       }
+      ]
+     }
+    }
+   },
+   "텍스트": {
+    "opened": false,
+    "children": {
+     "text-title-size": {
+      "type": "textfield",
+      "label": "타이틀 크기",
+      "suffix": "px"
+     },
+     "color-title": {
+      "type": "color",
+      "label": "타이틀 색상"
+     },
+     "text-subtitle-size": {
+      "type": "textfield",
+      "label": "서브텍스트 크기",
+      "suffix": "px"
+     },
+     "color-subtitle": {
+      "type": "color",
+      "label": "서브텍스트 색상"
+     }
+    }
+   },
+   "콘텐츠 레이아웃": {
+    "opened": false,
+    "children": {
+     "select-content-position": {
+      "type": "select",
+      "label": "텍스트 위치",
+      "values": [
+       "top-left",
+       "top-center",
+       "top-right",
+       "mid-left",
+       "mid-center",
+       "mid-right",
+       "bot-left",
+       "bot-center",
+       "bot-right"
+      ],
+      "valueNames": [
+       "왼쪽 상단",
+       "중앙 상단",
+       "오른쪽 상단",
+       "왼쪽 중앙",
+       "정 중앙",
+       "오른쪽 중앙",
+       "왼쪽 하단",
+       "중앙 하단",
+       "오른쪽 하단"
+      ]
+     },
+     "text-title-subtitle-gap": {
+      "type": "textfield",
+      "label": "텍스트 사이 간격",
+      "suffix": "px"
+     }
+    }
+   },
+   "카드 레이아웃": {
+    "opened": false,
+    "children": {
+     "select-card-ratio": {
+      "type": "select",
+      "label": "카드 비율",
+      "values": [
+       "1.0",
+       "1.25",
+       "1.34",
+       "1.5",
+       "1.78",
+       "2.0"
+      ],
+      "valueNames": [
+       "1:1",
+       "4:5",
+       "3:4",
+       "2:3",
+       "9:16",
+       "1:2"
+      ]
+     },
+     "text-card-width": {
+      "type": "textfield",
+      "label": "카드 너비",
+      "suffix": "px"
+     },
+     "text-padding-v": {
+      "type": "textfield",
+      "label": "내부 상하 여백",
+      "suffix": "px"
+     },
+     "text-padding-h": {
+      "type": "textfield",
+      "label": "내부 좌우 여백",
+      "suffix": "px"
+     },
+     "text-gap": {
+      "type": "textfield",
+      "label": "카드 간 간격",
+      "suffix": "px"
+     },
+     "text-border-radius": {
+      "type": "textfield",
+      "label": "모서리 둥글기",
+      "suffix": "px"
+     }
+    }
+   },
+   "좌우 버튼": {
+    "opened": false,
+    "children": {
+     "segment-arrow-style": {
+      "type": "segment",
+      "label": "화살표 스타일",
+      "values": [
+       "chevron",
+       "arrow"
+      ],
+      "valueNames": [
+       ">",
+       "→"
+      ]
+     },
+     "color-arrow": {
+      "type": "color",
+      "label": "화살표 색상"
+     },
+     "color-arrow-bg": {
+      "type": "color",
+      "label": "버튼 배경 색상"
+     }
+    }
+   },
+   "슬라이드 애니메이션": {
+    "opened": false,
+    "children": {
+     "switch-center-scale": {
+      "type": "switch",
+      "label": "중앙 이미지 확대"
+     },
+     "switch-hover-scale": {
+      "type": "switch",
+      "label": "마우스 오버 이미지 확대"
+     },
+     "switch-autoplay": {
+      "type": "switch",
+      "label": "자동 재생"
+     },
+     "text-autoplay-speed": {
+      "type": "textfield",
+      "label": "자동재생 속도",
+      "suffix": "ms"
+     }
+    }
+   },
+   "등장 애니메이션": {
+    "opened": false,
+    "children": {
+     "select-anim": {
+      "type": "select",
+      "label": "스타일",
+      "values": [
+       "none",
+       "fade",
+       "slide-up",
+       "slide-down",
+       "slide-left",
+       "slide-right",
+       "zoom-in"
+      ],
+      "valueNames": [
+       "없음",
+       "페이드",
+       "슬라이드인-업",
+       "슬라이드인-다운",
+       "슬라이드인-왼쪽",
+       "슬라이드인-오른쪽",
+       "줌-인"
+      ]
+     },
+     "text-animduration": {
+      "type": "textfield",
+      "label": "지속 시간",
+      "suffix": "초",
+      "placeholder": "0.7"
+     },
+     "text-animdelay": {
+      "type": "textfield",
+      "label": "지연 시간 (초)",
+      "suffix": "초",
+      "placeholder": "0"
+     }
+    }
+   }
+  }
+ },
+ {
+  "code": "cw202605203ab6611ecb953",
+  "title": "이미지 세로 카드",
+  "variables": {
+   "아이템": {
+    "opened": false,
+    "children": {
+     "item-cards": {
+      "type": "item",
+      "label": "카드 아이템",
+      "fields": {
+       "image-card": {
+        "type": "image",
+        "label": "카드 이미지"
+       },
+       "text-imgalt": {
+        "type": "textfield",
+        "label": "이미지 대체 텍스트",
+        "placeholder": "이미지 대체 텍스트 입력"
+       },
+       "editor-title": {
+        "type": "text-editor",
+        "label": "텍스트 1"
+       },
+       "editor-sub": {
+        "type": "text-editor",
+        "label": "텍스트 2"
+       },
+       "text-btnlabel": {
+        "type": "textfield",
+        "label": "버튼 문구",
+        "placeholder": "문구 미입력 시 버튼 미노출"
+       },
+       "text-btnlink": {
+        "type": "textfield",
+        "label": "링크",
+        "placeholder": "https://"
+       },
+       "switch-btnnewtab": {
+        "type": "switch",
+        "label": "새창으로 이동"
+       }
+      },
+      "default": [
+       {
+        "image-card": "",
+        "text-imgalt": "",
+        "editor-title": "",
+        "editor-sub": "",
+        "text-btnlabel": "",
+        "text-btnlink": "",
+        "switch-btnnewtab": false
+       },
+       {
+        "image-card": "",
+        "text-imgalt": "",
+        "editor-title": "",
+        "editor-sub": "",
+        "text-btnlabel": "",
+        "text-btnlink": "",
+        "switch-btnnewtab": false
+       },
+       {
+        "image-card": "",
+        "text-imgalt": "",
+        "editor-title": "",
+        "editor-sub": "",
+        "text-btnlabel": "",
+        "text-btnlink": "",
+        "switch-btnnewtab": false
+       }
+      ]
+     }
+    }
+   },
+   "텍스트": {
+    "opened": false,
+    "children": {
+     "text-titlesize": {
+      "type": "textfield",
+      "label": "텍스트 1 크기",
+      "suffix": "px",
+      "placeholder": "30"
+     },
+     "color-title": {
+      "type": "color",
+      "label": "텍스트 1 컬러"
+     },
+     "text-subsize": {
+      "type": "textfield",
+      "label": "텍스트 2 크기",
+      "suffix": "px",
+      "placeholder": "16"
+     },
+     "color-sub": {
+      "type": "color",
+      "label": "텍스트 2 컬러"
+     },
+     "segment-textalign": {
+      "type": "segment",
+      "label": "정렬",
+      "values": [
+       "left",
+       "center",
+       "right"
+      ],
+      "valueNames": [
+       "왼쪽",
+       "가운데",
+       "오른쪽"
+      ]
+     }
+    }
+   },
+   "이미지": {
+    "opened": false,
+    "children": {
+     "select-imageratio": {
+      "type": "select",
+      "label": "이미지 비율",
+      "values": [
+       "r1-1",
+       "r4-3",
+       "r3-4",
+       "r16-9",
+       "r9-16"
+      ],
+      "valueNames": [
+       "1:1",
+       "4:3",
+       "3:4",
+       "16:9",
+       "9:16"
+      ]
+     }
+    }
+   },
+   "버튼": {
+    "opened": false,
+    "children": {
+     "text-btnsize": {
+      "type": "textfield",
+      "label": "버튼 텍스트 크기",
+      "suffix": "px",
+      "placeholder": "16"
+     },
+     "color-btntext": {
+      "type": "color",
+      "label": "기본 텍스트 컬러"
+     },
+     "color-btnbg": {
+      "type": "color",
+      "label": "기본 배경 컬러"
+     },
+     "color-btnborder": {
+      "type": "color",
+      "label": "기본 테두리 컬러"
+     },
+     "color-btntexthover": {
+      "type": "color",
+      "label": "마우스 오버 텍스트 컬러"
+     },
+     "color-btnbghover": {
+      "type": "color",
+      "label": "마우스 오버 배경 컬러"
+     },
+     "color-btnborderhover": {
+      "type": "color",
+      "label": "마우스 오버 테두리 컬러"
+     },
+     "text-btnborderwidth": {
+      "type": "textfield",
+      "label": "테두리 두께",
+      "suffix": "px",
+      "placeholder": "0"
+     },
+     "text-btnpadv": {
+      "type": "textfield",
+      "label": "내부 상하 여백",
+      "suffix": "px",
+      "placeholder": "12"
+     },
+     "text-btnradius": {
+      "type": "textfield",
+      "label": "모서리 둥글기",
+      "suffix": "px",
+      "placeholder": "8"
+     }
+    }
+   },
+   "레이아웃": {
+    "opened": false,
+    "children": {
+     "text-textgap": {
+      "type": "textfield",
+      "label": "텍스트 사이 간격",
+      "suffix": "px",
+      "placeholder": "14"
+     },
+     "text-btngap": {
+      "type": "textfield",
+      "label": "텍스트·버튼 사이 간격",
+      "suffix": "px",
+      "placeholder": "14"
+     },
+     "text-padh": {
+      "type": "textfield",
+      "label": "내부 좌우 여백",
+      "suffix": "px",
+      "placeholder": "24"
+     },
+     "text-padv": {
+      "type": "textfield",
+      "label": "내부 상하 여백",
+      "suffix": "px",
+      "placeholder": "24"
+     }
+    }
+   },
+   "배경": {
+    "opened": false,
+    "children": {
+     "color-cardbg": {
+      "type": "color",
+      "label": "배경 컬러"
+     },
+     "color-cardborder": {
+      "type": "color",
+      "label": "테두리 컬러"
+     },
+     "text-cardborderwidth": {
+      "type": "textfield",
+      "label": "선 두께",
+      "suffix": "px",
+      "placeholder": "0"
+     },
+     "text-cardradius": {
+      "type": "textfield",
+      "label": "모서리 둥글기",
+      "suffix": "px",
+      "placeholder": "8"
+     }
+    }
+   },
+   "효과": {
+    "opened": false,
+    "children": {
+     "switch-imghover": {
+      "type": "switch",
+      "label": "마우스 오버 시 이미지 확대"
+     },
+     "switch-shadow": {
+      "type": "switch",
+      "label": "카드 그림자"
+     }
+    }
+   },
+   "등장 애니메이션": {
+    "opened": false,
+    "children": {
+     "select-anim": {
+      "type": "select",
+      "label": "스타일",
+      "values": [
+       "none",
+       "fade",
+       "slide-up",
+       "slide-down",
+       "slide-left",
+       "slide-right",
+       "zoom-in"
+      ],
+      "valueNames": [
+       "없음",
+       "페이드",
+       "슬라이드인-업",
+       "슬라이드인-다운",
+       "슬라이드인-왼쪽",
+       "슬라이드인-오른쪽",
+       "줌-인"
+      ]
+     },
+     "text-animduration": {
+      "type": "textfield",
+      "label": "지속 시간",
+      "suffix": "초",
+      "placeholder": "0.7"
+     },
+     "text-animdelay": {
+      "type": "textfield",
+      "label": "지연 시간",
+      "suffix": "초",
+      "placeholder": "0"
+     }
+    }
+   }
+  }
+ },
+ {
+  "code": "cw202605203cfd4a4865221",
+  "title": "플립 띠 배너",
+  "variables": {
+   "아이템": {
+    "opened": true,
+    "children": {
+     "items": {
+      "type": "item",
+      "label": "플립 아이템",
+      "fields": {
+       "text": {
+        "type": "textfield",
+        "label": "텍스트"
+       },
+       "date-start": {
+        "type": "date",
+        "label": "시작 날짜"
+       },
+       "time-start": {
+        "type": "time",
+        "label": "시작 시간"
+       },
+       "date-end": {
+        "type": "date",
+        "label": "종료 날짜"
+       },
+       "time-end": {
+        "type": "time",
+        "label": "종료 시간"
+       }
+      },
+      "default": [
+       {
+        "text": "",
+        "date-start": "",
+        "time-start": "",
+        "date-end": "",
+        "time-end": ""
+       },
+       {
+        "text": "",
+        "date-start": "",
+        "time-start": "",
+        "date-end": "",
+        "time-end": ""
+       },
+       {
+        "text": "",
+        "date-start": "",
+        "time-start": "",
+        "date-end": "",
+        "time-end": ""
+       }
+      ]
+     }
+    }
+   },
+   "텍스트": {
+    "opened": false,
+    "children": {
+     "num-size": {
+      "type": "textfield",
+      "label": "텍스트 크기",
+      "suffix": "px"
+     },
+     "color-text": {
+      "type": "color",
+      "label": "텍스트 컬러"
+     }
+    }
+   },
+   "레이아웃": {
+    "opened": false,
+    "children": {
+     "num-padding-y": {
+      "type": "textfield",
+      "label": "내부 상하 여백",
+      "suffix": "px"
+     },
+     "color-bg": {
+      "type": "color",
+      "label": "배경 컬러"
+     }
+    }
+   },
+   "플립 애니메이션": {
+    "opened": false,
+    "children": {
+     "num-speed": {
+      "type": "textfield",
+      "label": "텍스트 표시 시간",
+      "suffix": "초"
+     },
+     "switch-hover-pause": {
+      "type": "switch",
+      "label": "마우스 오버 시 정지"
+     }
+    }
+   },
+   "등장 애니메이션": {
+    "opened": false,
+    "children": {
+     "select-anim": {
+      "type": "select",
+      "label": "스타일",
+      "values": [
+       "none",
+       "fade",
+       "slide-up",
+       "slide-down",
+       "slide-left",
+       "slide-right",
+       "zoom-in"
+      ],
+      "valueNames": [
+       "없음",
+       "페이드",
+       "슬라이드인-업",
+       "슬라이드인-다운",
+       "슬라이드인-왼쪽",
+       "슬라이드인-오른쪽",
+       "줌-인"
+      ]
+     },
+     "text-animduration": {
+      "type": "textfield",
+      "label": "지속 시간",
+      "suffix": "초",
+      "placeholder": "0.7"
+     },
+     "text-animdelay": {
+      "type": "textfield",
+      "label": "지연 시간",
+      "suffix": "초",
+      "placeholder": "0"
+     }
+    }
+   }
+  }
+ },
+ {
+  "code": "cw20260520529e25db18174",
+  "title": "플립 카드",
+  "variables": {
+   "아이템": {
+    "opened": false,
+    "children": {
+     "item-cards": {
+      "type": "item",
+      "label": "플립 카드 아이템",
+      "fields": {
+       "image-front": {
+        "type": "image",
+        "label": "앞면 이미지"
+       },
+       "color-frontbg": {
+        "type": "color",
+        "label": "앞면 배경 컬러"
+       },
+       "text-fronttitle": {
+        "type": "textfield",
+        "label": "앞면 타이틀",
+        "placeholder": "타이틀 문구 입력"
+       },
+       "text-frontsub": {
+        "type": "textfield",
+        "label": "앞면 내용",
+        "placeholder": "내용 문구 입력"
+       },
+       "image-back": {
+        "type": "image",
+        "label": "뒷면 이미지"
+       },
+       "color-backbg": {
+        "type": "color",
+        "label": "뒷면 배경 컬러"
+       },
+       "text-backtitle": {
+        "type": "textfield",
+        "label": "뒷면 타이틀",
+        "placeholder": "타이틀 문구 입력"
+       },
+       "editor-backsub": {
+        "type": "text-editor",
+        "label": "뒷면 내용"
+       }
+      },
+      "default": [
+       {
+        "image-front": "",
+        "color-frontbg": "",
+        "text-fronttitle": "",
+        "text-frontsub": "",
+        "image-back": "",
+        "color-backbg": "",
+        "text-backtitle": "",
+        "editor-backsub": ""
+       },
+       {
+        "image-front": "",
+        "color-frontbg": "",
+        "text-fronttitle": "",
+        "text-frontsub": "",
+        "image-back": "",
+        "color-backbg": "",
+        "text-backtitle": "",
+        "editor-backsub": ""
+       },
+       {
+        "image-front": "",
+        "color-frontbg": "",
+        "text-fronttitle": "",
+        "text-frontsub": "",
+        "image-back": "",
+        "color-backbg": "",
+        "text-backtitle": "",
+        "editor-backsub": ""
+       }
+      ]
+     }
+    }
+   },
+   "앞면 텍스트": {
+    "opened": false,
+    "children": {
+     "text-fronttitlesize": {
+      "type": "textfield",
+      "label": "앞면 타이틀 크기",
+      "suffix": "px"
+     },
+     "color-fronttitle": {
+      "type": "color",
+      "label": "앞면 타이틀 컬러"
+     },
+     "text-frontsubsize": {
+      "type": "textfield",
+      "label": "앞면 내용 크기",
+      "suffix": "px"
+     },
+     "color-frontsub": {
+      "type": "color",
+      "label": "앞면 내용 컬러"
+     }
+    }
+   },
+   "앞면 레이아웃": {
+    "opened": false,
+    "children": {
+     "select-frontpos": {
+      "type": "select",
+      "label": "텍스트 위치",
+      "values": [
+       "tl",
+       "tc",
+       "tr",
+       "ml",
+       "mc",
+       "mr",
+       "bl",
+       "bc",
+       "br"
+      ],
+      "valueNames": [
+       "왼쪽 상단",
+       "중앙 상단",
+       "오른쪽 상단",
+       "왼쪽 중앙",
+       "중앙 중앙",
+       "오른쪽 중앙",
+       "왼쪽 하단",
+       "중앙 하단",
+       "오른쪽 하단"
+      ]
+     },
+     "text-frontpady": {
+      "type": "textfield",
+      "label": "상하 여백",
+      "suffix": "px"
+     },
+     "text-frontpadx": {
+      "type": "textfield",
+      "label": "좌우 여백",
+      "suffix": "px"
+     },
+     "text-fronttextgap": {
+      "type": "textfield",
+      "label": "타이틀·내용 간격",
+      "suffix": "px"
+     }
+    }
+   },
+   "뒷면 텍스트": {
+    "opened": false,
+    "children": {
+     "text-backtitlesize": {
+      "type": "textfield",
+      "label": "뒷면 타이틀 크기",
+      "suffix": "px"
+     },
+     "color-backtitle": {
+      "type": "color",
+      "label": "뒷면 타이틀 컬러"
+     },
+     "text-backsubsize": {
+      "type": "textfield",
+      "label": "뒷면 내용 크기",
+      "suffix": "px"
+     },
+     "color-backsub": {
+      "type": "color",
+      "label": "뒷면 내용 컬러"
+     }
+    }
+   },
+   "뒷면 레이아웃": {
+    "opened": false,
+    "children": {
+     "select-backpos": {
+      "type": "select",
+      "label": "뒷면 텍스트 위치",
+      "values": [
+       "tl",
+       "tc",
+       "tr",
+       "ml",
+       "mc",
+       "mr",
+       "bl",
+       "bc",
+       "br"
+      ],
+      "valueNames": [
+       "왼쪽 상단",
+       "중앙 상단",
+       "오른쪽 상단",
+       "왼쪽 중앙",
+       "중앙 중앙",
+       "오른쪽 중앙",
+       "왼쪽 하단",
+       "중앙 하단",
+       "오른쪽 하단"
+      ]
+     },
+     "text-backpady": {
+      "type": "textfield",
+      "label": "내부 상하 여백",
+      "suffix": "px"
+     },
+     "text-backpadx": {
+      "type": "textfield",
+      "label": "내부 좌우 여백",
+      "suffix": "px"
+     },
+     "text-backtextgap": {
+      "type": "textfield",
+      "label": "타이틀·내용 간격",
+      "suffix": "px"
+     }
+    }
+   },
+   "카드 레이아웃": {
+    "opened": false,
+    "children": {
+     "select-imgratio": {
+      "type": "select",
+      "label": "이미지 비율",
+      "values": [
+       "r-auto",
+       "r1-1",
+       "r3-4",
+       "r4-3",
+       "r9-16",
+       "r16-9"
+      ],
+      "valueNames": [
+       "기본",
+       "1:1",
+       "3:4",
+       "4:3",
+       "9:16",
+       "16:9"
+      ]
+     },
+     "text-cardgap": {
+      "type": "textfield",
+      "label": "카드 간 간격",
+      "suffix": "px"
+     }
+    }
+   },
+   "슬라이드 애니메이션": {
+    "opened": false,
+    "children": {
+     "switch-autoplay": {
+      "type": "switch",
+      "label": "자동 전환"
+     },
+     "text-autoplaytime": {
+      "type": "textfield",
+      "label": "자동 전환 간격",
+      "suffix": "초"
+     }
+    }
+   },
+   "등장 애니메이션": {
+    "opened": false,
+    "children": {
+     "select-anim": {
+      "type": "select",
+      "label": "스타일",
+      "values": [
+       "none",
+       "fade",
+       "slide-up",
+       "slide-down",
+       "slide-left",
+       "slide-right",
+       "zoom-in"
+      ],
+      "valueNames": [
+       "없음",
+       "페이드",
+       "슬라이드인-업",
+       "슬라이드인-다운",
+       "슬라이드인-왼쪽",
+       "슬라이드인-오른쪽",
+       "줌-인"
+      ]
+     },
+     "text-animduration": {
+      "type": "textfield",
+      "label": "지속 시간",
+      "suffix": "초"
+     },
+     "text-animdelay": {
+      "type": "textfield",
+      "label": "지연 시간",
+      "suffix": "초"
+     }
+    }
+   }
+  }
+ },
+ {
+  "code": "cw2026052055015da4bc943",
+  "title": "긴 가로 카드",
+  "variables": {
+   "아이템": {
+    "opened": false,
+    "children": {
+     "item-cards": {
+      "type": "item",
+      "label": "카드 아이템",
+      "fields": {
+       "image-icon": {
+        "type": "image",
+        "label": "이미지"
+       },
+       "editor-title": {
+        "type": "text-editor",
+        "label": "타이틀"
+       },
+       "editor-content": {
+        "type": "text-editor",
+        "label": "내용"
+       },
+       "text-link": {
+        "type": "textfield",
+        "label": "링크",
+        "placeholder": "https://"
+       },
+       "switch-newtab": {
+        "type": "switch",
+        "label": "새창으로 이동"
+       }
+      },
+      "default": [
+       {
+        "image-icon": "",
+        "editor-title": "",
+        "editor-content": "",
+        "text-link": "",
+        "switch-newtab": false
+       },
+       {
+        "image-icon": "",
+        "editor-title": "",
+        "editor-content": "",
+        "text-link": "",
+        "switch-newtab": false
+       },
+       {
+        "image-icon": "",
+        "editor-title": "",
+        "editor-content": "",
+        "text-link": "",
+        "switch-newtab": false
+       }
+      ]
+     }
+    }
+   },
+   "텍스트": {
+    "opened": false,
+    "children": {
+     "text-title-size": {
+      "type": "textfield",
+      "label": "타이틀 크기",
+      "suffix": "px"
+     },
+     "color-title": {
+      "type": "color",
+      "label": "타이틀 컬러"
+     },
+     "text-content-size": {
+      "type": "textfield",
+      "label": "내용 크기",
+      "suffix": "px"
+     },
+     "color-content": {
+      "type": "color",
+      "label": "내용 컬러"
+     }
+    }
+   },
+   "이미지": {
+    "opened": false,
+    "children": {
+     "text-icon-size": {
+      "type": "textfield",
+      "label": "이미지 크기",
+      "suffix": "px"
+     }
+    }
+   },
+   "배경": {
+    "opened": false,
+    "children": {
+     "color-card-bg": {
+      "type": "color",
+      "label": "카드 배경 컬러"
+     },
+     "color-card-border": {
+      "type": "color",
+      "label": "테두리 컬러"
+     },
+     "text-card-border-width": {
+      "type": "textfield",
+      "label": "테두리 두께",
+      "suffix": "px"
+     },
+     "text-card-radius": {
+      "type": "textfield",
+      "label": "모서리 둥글기",
+      "suffix": "px"
+     },
+     "switch-shadow": {
+      "type": "switch",
+      "label": "카드 그림자"
+     }
+    }
+   },
+   "레이아웃": {
+    "opened": false,
+    "children": {
+     "segment-style": {
+      "type": "segment",
+      "label": "스타일",
+      "values": [
+       "row",
+       "column"
+      ],
+      "valueNames": [
+       "가로 나열",
+       "세로 나열"
+      ]
+     },
+     "text-text-gap": {
+      "type": "textfield",
+      "label": "타이틀·내용 간 간격",
+      "suffix": "px"
+     },
+     "text-icon-text-gap": {
+      "type": "textfield",
+      "label": "아이콘·텍스트 사이여백",
+      "suffix": "px"
+     },
+     "text-card-gap": {
+      "type": "textfield",
+      "label": "카드 간 간격",
+      "suffix": "px"
+     },
+     "text-card-padding-y": {
+      "type": "textfield",
+      "label": "카드 내부 상하 여백",
+      "suffix": "px"
+     },
+     "text-card-padding-x": {
+      "type": "textfield",
+      "label": "카드 내부 좌우 여백",
+      "suffix": "px"
+     }
+    }
+   },
+   "등장 애니메이션": {
+    "opened": false,
+    "children": {
+     "select-anim-style": {
+      "type": "select",
+      "label": "스타일",
+      "values": [
+       "none",
+       "fade",
+       "slide-up",
+       "slide-down",
+       "slide-left",
+       "slide-right",
+       "zoom-in"
+      ],
+      "valueNames": [
+       "없음",
+       "페이드",
+       "슬라이드인-업",
+       "슬라이드인-다운",
+       "슬라이드인-왼쪽",
+       "슬라이드인-오른쪽",
+       "줌-인"
+      ]
+     },
+     "text-anim-duration": {
+      "type": "textfield",
+      "label": "지속 시간"
+     },
+     "text-anim-delay": {
+      "type": "textfield",
+      "label": "지연 시간"
+     }
+    }
+   }
+  }
+ },
+ {
+  "code": "cw202605205679143a8fe2f",
+  "title": "롤링 텍스트",
+  "variables": {
+   "문구": {
+    "opened": false,
+    "children": {
+     "text-prefix": {
+      "type": "textfield",
+      "label": "앞쪽 고정 텍스트",
+      "placeholder": "앞쪽 고정 문구 입력"
+     },
+     "item-texts": {
+      "type": "item",
+      "label": "롤링 텍스트 목록",
+      "fields": {
+       "text-content": {
+        "type": "textfield",
+        "label": "텍스트",
+        "placeholder": "롤링될 텍스트 입력"
+       }
+      },
+      "default": [
+       {
+        "text-content": ""
+       },
+       {
+        "text-content": ""
+       },
+       {
+        "text-content": ""
+       }
+      ]
+     },
+     "text-suffix": {
+      "type": "textfield",
+      "label": "뒤쪽 고정 텍스트",
+      "placeholder": "뒤쪽 고정 문구 입력"
+     },
+     "text-trans-speed": {
+      "type": "textfield",
+      "label": "전환 속도",
+      "suffix": "초",
+      "placeholder": "0.5"
+     }
+    }
+   },
+   "스타일": {
+    "opened": false,
+    "children": {
+     "text-size": {
+      "type": "textfield",
+      "label": "PC 텍스트 크기",
+      "suffix": "px"
+     },
+     "text-size-mobile": {
+      "type": "textfield",
+      "label": "모바일 텍스트 크기",
+      "suffix": "px"
+     },
+     "color-static": {
+      "type": "color",
+      "label": "고정 텍스트 컬러"
+     },
+     "color-highlight": {
+      "type": "color",
+      "label": "강조 텍스트 컬러"
+     },
+     "select-effect": {
+      "type": "select",
+      "label": "텍스트 효과",
+      "values": [
+       "slide-up",
+       "fade",
+       "blur",
+       "typewriter"
+      ],
+      "valueNames": [
+       "슬라이드업",
+       "페이드",
+       "블러",
+       "타이핑"
+      ]
+     }
+    }
+   },
+   "배경": {
+    "opened": false,
+    "children": {
+     "image-bg": {
+      "type": "image",
+      "label": "배경 이미지"
+     },
+     "color-bg": {
+      "type": "color",
+      "label": "배경 오버레이 색상"
+     },
+     "text-radius": {
+      "type": "textfield",
+      "label": "모서리 둥글기",
+      "suffix": "px"
+     }
+    }
+   },
+   "레이아웃": {
+    "opened": false,
+    "children": {
+     "text-height": {
+      "type": "textfield",
+      "label": "PC 높이",
+      "suffix": "px"
+     },
+     "text-height-mobile": {
+      "type": "textfield",
+      "label": "모바일 높이",
+      "suffix": "px"
+     },
+     "select-position": {
+      "type": "select",
+      "label": "텍스트 위치",
+      "values": [
+       "top-left",
+       "top-center",
+       "top-right",
+       "middle-left",
+       "middle-center",
+       "middle-right",
+       "bottom-left",
+       "bottom-center",
+       "bottom-right"
+      ],
+      "valueNames": [
+       "왼쪽 상단",
+       "가운데 상단",
+       "오른쪽 상단",
+       "왼쪽 중앙",
+       "가운데",
+       "오른쪽 중앙",
+       "왼쪽 하단",
+       "가운데 하단",
+       "오른쪽 하단"
+      ]
+     },
+     "text-padding-v": {
+      "type": "textfield",
+      "label": "내부 상하 여백",
+      "suffix": "px"
+     },
+     "text-padding-h": {
+      "type": "textfield",
+      "label": "내부 좌우 여백",
+      "suffix": "px"
+     }
+    }
+   },
+   "등장 애니메이션": {
+    "opened": false,
+    "children": {
+     "select-anim": {
+      "type": "select",
+      "label": "스타일",
+      "values": [
+       "none",
+       "fade",
+       "slide-up",
+       "slide-down",
+       "slide-left",
+       "slide-right",
+       "zoom-in"
+      ],
+      "valueNames": [
+       "없음",
+       "페이드",
+       "슬라이드인-업",
+       "슬라이드인-다운",
+       "슬라이드인-왼쪽",
+       "슬라이드인-오른쪽",
+       "줌-인"
+      ]
+     },
+     "text-animduration": {
+      "type": "textfield",
+      "label": "지속 시간 ",
+      "suffix": "초",
+      "placeholder": "0.7"
+     },
+     "text-animdelay": {
+      "type": "textfield",
+      "label": "지연 시간 ",
+      "suffix": "초",
+      "placeholder": "0"
+     }
+    }
+   }
+  }
+ },
+ {
+  "code": "cw202605205c2f2702786ca",
+  "title": "스크롤 다운",
+  "variables": {
+   "아이템": {
+    "opened": false,
+    "children": {
+     "item-banners": {
+      "type": "item",
+      "label": "아이템",
+      "fields": {
+       "color-bg": {
+        "type": "color",
+        "label": "배경 컬러"
+       },
+       "image-bg-pc": {
+        "type": "image",
+        "label": "PC 배경 이미지"
+       },
+       "image-bg-mo": {
+        "type": "image",
+        "label": "모바일 배경 이미지"
+       },
+       "editor-text1": {
+        "type": "text-editor",
+        "label": "텍스트 1"
+       },
+       "editor-text2": {
+        "type": "text-editor",
+        "label": "텍스트 2"
+       },
+       "text-btn-label": {
+        "type": "textfield",
+        "label": "버튼 문구",
+        "placeholder": "문구 미입력 시 버튼 미노출"
+       },
+       "text-btn-link": {
+        "type": "textfield",
+        "label": "링크",
+        "placeholder": "https://"
+       },
+       "switch-btn-newtab": {
+        "type": "switch",
+        "label": "새창으로 이동"
+       }
+      },
+      "default": [
+       {
+        "color-bg": "",
+        "image-bg-pc": "",
+        "image-bg-mo": "",
+        "editor-text1": "",
+        "editor-text2": "",
+        "text-btn-label": "",
+        "text-btn-link": "",
+        "switch-btn-newtab": false
+       },
+       {
+        "color-bg": "",
+        "image-bg-pc": "",
+        "image-bg-mo": "",
+        "editor-text1": "",
+        "editor-text2": "",
+        "text-btn-label": "",
+        "text-btn-link": "",
+        "switch-btn-newtab": false
+       },
+       {
+        "color-bg": "",
+        "image-bg-pc": "",
+        "image-bg-mo": "",
+        "editor-text1": "",
+        "editor-text2": "",
+        "text-btn-label": "",
+        "text-btn-link": "",
+        "switch-btn-newtab": false
+       }
+      ]
+     }
+    }
+   },
+   "텍스트": {
+    "opened": false,
+    "children": {
+     "text-text1-size": {
+      "type": "textfield",
+      "label": "텍스트 1 크기",
+      "suffix": "px"
+     },
+     "color-text1": {
+      "type": "color",
+      "label": "텍스트 1 컬러"
+     },
+     "text-text2-size": {
+      "type": "textfield",
+      "label": "텍스트 2 크기",
+      "suffix": "px"
+     },
+     "color-text2": {
+      "type": "color",
+      "label": "텍스트 2 컬러"
+     }
+    }
+   },
+   "버튼": {
+    "opened": false,
+    "children": {
+     "text-btn-text-size": {
+      "type": "textfield",
+      "label": "버튼 텍스트 크기",
+      "suffix": "px"
+     },
+     "color-btn-text": {
+      "type": "color",
+      "label": "텍스트 컬러"
+     },
+     "color-btn-text-hover": {
+      "type": "color",
+      "label": "마우스오버 텍스트 컬러"
+     },
+     "color-btn-bg": {
+      "type": "color",
+      "label": "배경 컬러"
+     },
+     "color-btn-bg-hover": {
+      "type": "color",
+      "label": "마우스오버 배경 컬러"
+     },
+     "color-btn-border": {
+      "type": "color",
+      "label": "테두리 컬러"
+     },
+     "color-btn-border-hover": {
+      "type": "color",
+      "label": "마우스오버 테두리 컬러"
+     },
+     "text-btn-border": {
+      "type": "textfield",
+      "label": "테두리 두께",
+      "suffix": "px"
+     },
+     "text-btn-padding-y": {
+      "type": "textfield",
+      "label": "내부 상하 여백",
+      "suffix": "px"
+     },
+     "text-btn-padding-x": {
+      "type": "textfield",
+      "label": "내부 좌우 여백",
+      "suffix": "px"
+     },
+     "text-btn-radius": {
+      "type": "textfield",
+      "label": "모서리 둥글기",
+      "suffix": "px"
+     }
+    }
+   },
+   "콘텐츠 레이아웃": {
+    "opened": false,
+    "children": {
+     "text-gap-text": {
+      "type": "textfield",
+      "label": "텍스트 사이 간격",
+      "suffix": "px"
+     },
+     "text-gap-btn": {
+      "type": "textfield",
+      "label": "텍스트·버튼 사이 간격",
+      "suffix": "px"
+     }
+    }
+   },
+   "슬라이드 레이아웃": {
+    "opened": false,
+    "children": {
+     "text-banner-height": {
+      "type": "textfield",
+      "label": "PC 높이",
+      "suffix": "px"
+     },
+     "text-banner-height-mo": {
+      "type": "textfield",
+      "label": "모바일 높이",
+      "suffix": "px"
+     },
+     "select-content-align": {
+      "type": "select",
+      "label": "PC 텍스트 위치",
+      "values": [
+       "left-top",
+       "left-center",
+       "left-bottom",
+       "center-top",
+       "center",
+       "center-bottom",
+       "right-top",
+       "right-center",
+       "right-bottom"
+      ],
+      "valueNames": [
+       "왼쪽 상단",
+       "왼쪽 중앙",
+       "왼쪽 하단",
+       "중앙 상단",
+       "정 중앙",
+       "중앙 하단",
+       "오른쪽 상단",
+       "오른쪽 중앙",
+       "오른쪽 하단"
+      ]
+     },
+     "select-content-align-mo": {
+      "type": "select",
+      "label": "모바일 텍스트 위치",
+      "values": [
+       "left-top",
+       "left-center",
+       "left-bottom",
+       "center-top",
+       "center",
+       "center-bottom",
+       "right-top",
+       "right-center",
+       "right-bottom"
+      ],
+      "valueNames": [
+       "왼쪽 상단",
+       "왼쪽 중앙",
+       "왼쪽 하단",
+       "중앙 상단",
+       "정 중앙",
+       "중앙 하단",
+       "오른쪽 상단",
+       "오른쪽 중앙",
+       "오른쪽 하단"
+      ]
+     },
+     "text-content-padding-y": {
+      "type": "textfield",
+      "label": "내부 상하 여백",
+      "suffix": "px"
+     },
+     "text-content-padding-x": {
+      "type": "textfield",
+      "label": "내부 좌우 여백",
+      "suffix": "px"
+     }
+    }
+   },
+   "인디케이터": {
+    "opened": false,
+    "children": {
+     "color-dot-active": {
+      "type": "color",
+      "label": "점 활성 컬러"
+     },
+     "color-dot-default": {
+      "type": "color",
+      "label": "점 기본 컬러"
+     }
+    }
+   },
+   "슬라이드 애니메이션": {
+    "opened": false,
+    "children": {
+     "text-transition": {
+      "type": "textfield",
+      "label": "전환 시간",
+      "suffix": "초"
+     }
+    }
+   },
+   "등장 애니메이션": {
+    "opened": false,
+    "children": {
+     "select-anim": {
+      "type": "select",
+      "label": "스타일",
+      "values": [
+       "none",
+       "fade",
+       "slide-up",
+       "slide-down",
+       "slide-left",
+       "slide-right",
+       "zoom-in"
+      ],
+      "valueNames": [
+       "없음",
+       "페이드",
+       "슬라이드인-업",
+       "슬라이드인-다운",
+       "슬라이드인-왼쪽",
+       "슬라이드인-오른쪽",
+       "줌-인"
+      ]
+     },
+     "text-animduration": {
+      "type": "textfield",
+      "label": "지속 시간 ",
+      "suffix": "초",
+      "placeholder": "0.7"
+     },
+     "text-animdelay": {
+      "type": "textfield",
+      "label": "지연 시간 ",
+      "suffix": "초",
+      "placeholder": "0"
+     }
+    }
+   }
+  }
+ },
+ {
+  "code": "cw2026052061b0f655df2c8",
+  "title": "세로 카드 슬라이드",
+  "variables": {
+   "아이템": {
+    "opened": false,
+    "children": {
+     "item-1": {
+      "type": "item",
+      "label": "롤링 아이템",
+      "fields": {
+       "image-1": {
+        "type": "image",
+        "label": "카드 이미지"
+       },
+       "editor-1": {
+        "type": "text-editor",
+        "label": "텍스트 1"
+       },
+       "editor-2": {
+        "type": "text-editor",
+        "label": "텍스트 2"
+       },
+       "text-1": {
+        "type": "textfield",
+        "label": "버튼 문구",
+        "placeholder": "버튼 문구 입력"
+       },
+       "text-2": {
+        "type": "textfield",
+        "label": "링크",
+        "placeholder": "https://"
+       },
+       "switch-1": {
+        "type": "switch",
+        "label": "새창으로 이동"
+       },
+       "date-1": {
+        "type": "date",
+        "label": "시작 날짜"
+       },
+       "time-1": {
+        "type": "time",
+        "label": "시작 시간"
+       },
+       "date-2": {
+        "type": "date",
+        "label": "종료 날짜"
+       },
+       "time-2": {
+        "type": "time",
+        "label": "종료 시간"
+       }
+      },
+      "default": [
+       {
+        "image-1": "",
+        "editor-1": "",
+        "editor-2": "",
+        "text-1": "",
+        "text-2": "",
+        "switch-1": false,
+        "date-1": "",
+        "time-1": "",
+        "date-2": "",
+        "time-2": ""
+       },
+       {
+        "image-1": "",
+        "editor-1": "",
+        "editor-2": "",
+        "text-1": "",
+        "text-2": "",
+        "switch-1": false,
+        "date-1": "",
+        "time-1": "",
+        "date-2": "",
+        "time-2": ""
+       },
+       {
+        "image-1": "",
+        "editor-1": "",
+        "editor-2": "",
+        "text-1": "",
+        "text-2": "",
+        "switch-1": false,
+        "date-1": "",
+        "time-1": "",
+        "date-2": "",
+        "time-2": ""
+       }
+      ]
+     }
+    }
+   },
+   "텍스트": {
+    "opened": false,
+    "children": {
+     "text-17": {
+      "type": "textfield",
+      "label": "타이틀 문구"
+     },
+     "text-3": {
+      "type": "textfield",
+      "label": "타이틀 텍스트 크기",
+      "suffix": "px"
+     },
+     "color-1": {
+      "type": "color",
+      "label": "타이틀 텍스트 컬러"
+     },
+     "text-4": {
+      "type": "textfield",
+      "label": "텍스트 1 크기",
+      "suffix": "px"
+     },
+     "color-2": {
+      "type": "color",
+      "label": "텍스트1 컬러"
+     },
+     "text-5": {
+      "type": "textfield",
+      "label": "텍스트 2 크기",
+      "suffix": "px"
+     },
+     "color-3": {
+      "type": "color",
+      "label": "텍스트2 컬러"
+     },
+     "radio-1": {
+      "type": "segment",
+      "label": "정렬",
+      "values": [
+       "left",
+       "center",
+       "right"
+      ],
+      "valueNames": [
+       "왼쪽",
+       "가운데",
+       "오른쪽"
+      ]
+     }
+    }
+   },
+   "버튼": {
+    "opened": false,
+    "children": {
+     "text-18": {
+      "type": "textfield",
+      "label": "텍스트 크기",
+      "suffix": "px"
+     },
+     "color-7": {
+      "type": "color",
+      "label": "텍스트 컬러"
+     },
+     "text-19": {
+      "type": "textfield",
+      "label": "높이",
+      "suffix": "px"
+     },
+     "color-8": {
+      "type": "color",
+      "label": "배경 컬러"
+     },
+     "color-9": {
+      "type": "color",
+      "label": "테두리 컬러"
+     },
+     "text-20": {
+      "type": "textfield",
+      "label": "테두리 두께",
+      "suffix": "px"
+     },
+     "text-21": {
+      "type": "textfield",
+      "label": "모서리 둥글기",
+      "suffix": "px"
+     }
+    }
+   },
+   "카드 레이아웃": {
+    "opened": false,
+    "children": {
+     "select-1": {
+      "type": "select",
+      "label": "이미지 비율",
+      "values": [
+       "3:4",
+       "9:16",
+       "1:1",
+       "16:9",
+       "4:3"
+      ],
+      "valueNames": [
+       "3:4",
+       "9:16",
+       "1:1",
+       "16:9",
+       "4:3"
+      ]
+     },
+     "text-7": {
+      "type": "textfield",
+      "label": "텍스트 사이 간격",
+      "suffix": "px"
+     },
+     "text-8": {
+      "type": "textfield",
+      "label": "텍스트·버튼 사이 간격",
+      "suffix": "px"
+     },
+     "text-10": {
+      "type": "textfield",
+      "label": "내부 상하 여백",
+      "suffix": "px"
+     },
+     "text-9": {
+      "type": "textfield",
+      "label": "내부 좌우 여백",
+      "suffix": "px"
+     }
+    }
+   },
+   "카드 배경": {
+    "opened": false,
+    "children": {
+     "color-4": {
+      "type": "color",
+      "label": "배경 컬러"
+     },
+     "color-5": {
+      "type": "color",
+      "label": "테두리 컬러"
+     },
+     "text-11": {
+      "type": "textfield",
+      "label": "테두리 두께",
+      "suffix": "px"
+     },
+     "text-12": {
+      "type": "textfield",
+      "label": "모서리 둥글기",
+      "suffix": "px"
+     }
+    }
+   },
+   "슬라이드 레이아웃": {
+    "opened": false,
+    "children": {
+     "text-13": {
+      "type": "textfield",
+      "label": "타이틀·슬라이드 간격",
+      "suffix": "px"
+     },
+     "text-14": {
+      "type": "textfield",
+      "label": "카드 간격",
+      "suffix": "px"
+     }
+    }
+   },
+   "슬라이드 좌우 버튼": {
+    "opened": false,
+    "children": {
+     "text-15": {
+      "type": "textfield",
+      "label": "좌우 버튼 크기",
+      "suffix": "px"
+     },
+     "radio-2": {
+      "type": "segment",
+      "label": "화살표 형태",
+      "values": [
+       ">",
+       "→"
+      ],
+      "valueNames": [
+       ">",
+       "→"
+      ]
+     },
+     "color-6": {
+      "type": "color",
+      "label": "화살표 컬러"
+     }
+    }
+   },
+   "슬라이드 애니메이션": {
+    "opened": false,
+    "children": {
+     "text-16": {
+      "type": "textfield",
+      "label": "전환 속도",
+      "suffix": "초"
+     },
+     "switch-2": {
+      "type": "switch",
+      "label": "자동 전환"
+     },
+     "switch-3": {
+      "type": "switch",
+      "label": "무한 슬라이드"
+     },
+     "switch-4": {
+      "type": "switch",
+      "label": "마우스 오버 시 이미지 확대"
+     }
+    }
+   },
+   "등장 애니메이션": {
+    "opened": false,
+    "children": {
+     "select-anim": {
+      "type": "select",
+      "label": "스타일",
+      "values": [
+       "none",
+       "fade",
+       "slide-up",
+       "slide-down",
+       "slide-left",
+       "slide-right",
+       "zoom-in"
+      ],
+      "valueNames": [
+       "없음",
+       "페이드",
+       "슬라이드인-업",
+       "슬라이드인-다운",
+       "슬라이드인-왼쪽",
+       "슬라이드인-오른쪽",
+       "줌-인"
+      ]
+     },
+     "text-animduration": {
+      "type": "textfield",
+      "label": "지속 시간",
+      "suffix": "초"
+     },
+     "text-animdelay": {
+      "type": "textfield",
+      "label": "지연 시간",
+      "suffix": "초"
+     }
+    }
+   }
+  }
+ },
+ {
+  "code": "cw20260520700e48c8f04ec",
+  "title": "텍스트 하이라이트",
+  "variables": {
+   "문구": {
+    "opened": false,
+    "children": {
+     "text-prefix": {
+      "type": "textfield",
+      "label": "앞쪽 고정 텍스트",
+      "placeholder": "앞쪽 고정 문구 입력"
+     },
+     "text-highlight": {
+      "type": "textfield",
+      "label": "하이라이트 텍스트",
+      "placeholder": "하이라이트 문구 입력"
+     },
+     "text-suffix": {
+      "type": "textfield",
+      "label": "뒤쪽 고정 텍스트",
+      "placeholder": "뒤쪽 고정 문구 입력"
+     }
+    }
+   },
+   "스타일": {
+    "opened": false,
+    "children": {
+     "text-size": {
+      "type": "textfield",
+      "label": "PC 테스트 크기",
+      "suffix": "px"
+     },
+     "text-size-mobile": {
+      "type": "textfield",
+      "label": "모바일 텍스트 크기",
+      "suffix": "px"
+     },
+     "color-fixed": {
+      "type": "color",
+      "label": "고정 텍스트 컬러"
+     },
+     "color-hl-text": {
+      "type": "color",
+      "label": "강조 텍스트 컬러"
+     }
+    }
+   },
+   "하이라이트": {
+    "opened": false,
+    "children": {
+     "color-hl-bar": {
+      "type": "color",
+      "label": "하이라이트 컬러"
+     },
+     "text-hl-thickness": {
+      "type": "textfield",
+      "label": "하이라이트 두께",
+      "suffix": "px"
+     }
+    }
+   },
+   "레이아웃": {
+    "opened": false,
+    "children": {
+     "text-gap": {
+      "type": "textfield",
+      "label": "텍스트 간격",
+      "suffix": "px"
+     },
+     "text-hl-gap": {
+      "type": "textfield",
+      "label": "텍스트·하이라이트 간격",
+      "suffix": "px"
+     },
+     "segment-align": {
+      "type": "segment",
+      "label": "정렬",
+      "values": [
+       "left",
+       "center",
+       "right"
+      ],
+      "valueNames": [
+       "왼쪽",
+       "가운데",
+       "오른쪽"
+      ]
+     }
+    }
+   },
+   "효과": {
+    "opened": false,
+    "children": {
+     "text-hl-speed": {
+      "type": "textfield",
+      "label": "하이라이팅 속도",
+      "suffix": "초"
+     }
+    }
+   },
+   "등장 애니메이션": {
+    "opened": false,
+    "children": {
+     "select-anim": {
+      "type": "select",
+      "label": "스타일",
+      "values": [
+       "none",
+       "fade",
+       "slide-up",
+       "slide-down",
+       "slide-left",
+       "slide-right",
+       "zoom-in"
+      ],
+      "valueNames": [
+       "없음",
+       "페이드",
+       "슬라이드인-업",
+       "슬라이드인-다운",
+       "슬라이드인-왼쪽",
+       "슬라이드인-오른쪽",
+       "줌-인"
+      ]
+     },
+     "text-animduration": {
+      "type": "textfield",
+      "label": "지속 시간",
+      "suffix": "초",
+      "placeholder": "0.7"
+     },
+     "text-animdelay": {
+      "type": "textfield",
+      "label": "지연 시간",
+      "suffix": "초",
+      "placeholder": "0"
+     }
+    }
+   }
+  }
+ },
+ {
+  "code": "cw20260520729996d22b751",
+  "title": "꽉 찬 이미지 슬라이드",
+  "variables": {
+   "아이템": {
+    "opened": true,
+    "children": {
+     "item-slides": {
+      "type": "item",
+      "label": "롤링 아이템",
+      "fields": {
+       "image-bg": {
+        "type": "image",
+        "label": "PC 이미지"
+       },
+       "image-bg-mobile": {
+        "type": "image",
+        "label": "모바일 이미지"
+       },
+       "editor-subtext": {
+        "type": "text-editor",
+        "label": "서브 텍스트"
+       },
+       "editor-title": {
+        "type": "text-editor",
+        "label": "타이틀"
+       },
+       "text-btn": {
+        "type": "textfield",
+        "label": "버튼 텍스트 ",
+        "placeholder": "문구 미입력 시 버튼 미노출"
+       },
+       "text-link": {
+        "type": "textfield",
+        "label": "링크",
+        "placeholder": "https://example.com"
+       },
+       "switch-new-tab": {
+        "type": "switch",
+        "label": "새창으로 이동"
+       },
+       "date-start": {
+        "type": "date",
+        "label": "노출 시작일"
+       },
+       "time-start": {
+        "type": "time",
+        "label": "노출 시작 시간"
+       },
+       "date-end": {
+        "type": "date",
+        "label": "노출 종료일"
+       },
+       "time-end": {
+        "type": "time",
+        "label": "노출 종료 시간"
+       }
+      },
+      "default": [
+       {
+        "image-bg": "",
+        "image-bg-mobile": "",
+        "editor-subtext": "",
+        "editor-title": "",
+        "text-btn": "",
+        "text-link": "",
+        "switch-new-tab": false,
+        "date-start": "",
+        "time-start": "",
+        "date-end": "",
+        "time-end": ""
+       },
+       {
+        "image-bg": "",
+        "image-bg-mobile": "",
+        "editor-subtext": "",
+        "editor-title": "",
+        "text-btn": "",
+        "text-link": "",
+        "switch-new-tab": false,
+        "date-start": "",
+        "time-start": "",
+        "date-end": "",
+        "time-end": ""
+       },
+       {
+        "image-bg": "",
+        "image-bg-mobile": "",
+        "editor-subtext": "",
+        "editor-title": "",
+        "text-btn": "",
+        "text-link": "",
+        "switch-new-tab": false,
+        "date-start": "",
+        "time-start": "",
+        "date-end": "",
+        "time-end": ""
+       }
+      ]
+     }
+    }
+   },
+   "텍스트": {
+    "opened": false,
+    "children": {
+     "text-subtext-size": {
+      "type": "textfield",
+      "label": "텍스트 1 크기",
+      "suffix": "px"
+     },
+     "color-subtext": {
+      "type": "color",
+      "label": "텍스트 1 컬러"
+     },
+     "text-title-size": {
+      "type": "textfield",
+      "label": "텍스트 2 크기",
+      "suffix": "px"
+     },
+     "color-title": {
+      "type": "color",
+      "label": "텍스트 2 컬러"
+     }
+    }
+   },
+   "버튼": {
+    "opened": false,
+    "children": {
+     "text-btn-size": {
+      "type": "textfield",
+      "label": "텍스트 크기",
+      "suffix": "px"
+     },
+     "color-btn-text": {
+      "type": "color",
+      "label": "텍스트 컬러"
+     },
+     "color-btn-bg": {
+      "type": "color",
+      "label": "배경 컬러"
+     },
+     "color-btn-border": {
+      "type": "color",
+      "label": "테두리 컬러"
+     },
+     "text-btn-border-width": {
+      "type": "textfield",
+      "label": "테두리 두께",
+      "suffix": "px"
+     },
+     "text-btn-px": {
+      "type": "textfield",
+      "label": "내부 좌우 여백",
+      "suffix": "px"
+     },
+     "text-btn-py": {
+      "type": "textfield",
+      "label": "내부 상하 여백",
+      "suffix": "px"
+     },
+     "text-btn-radius": {
+      "type": "textfield",
+      "label": "모서리 둥글기",
+      "suffix": "px"
+     }
+    }
+   },
+   "콘텐츠 레이아웃": {
+    "opened": false,
+    "children": {
+     "select-pc-position": {
+      "type": "select",
+      "label": "PC 콘텐츠 위치",
+      "values": [
+       "left-top",
+       "left-center",
+       "left-bottom",
+       "center-top",
+       "center-center",
+       "center-bottom",
+       "right-top",
+       "right-center",
+       "right-bottom"
+      ],
+      "valueNames": [
+       "왼쪽 상단",
+       "왼쪽 중앙",
+       "왼쪽 하단",
+       "중앙 상단",
+       "정 중앙",
+       "중앙 하단",
+       "오른쪽 상단",
+       "오른쪽 중앙",
+       "오른쪽 하단"
+      ]
+     },
+     "select-mobile-position": {
+      "type": "select",
+      "label": "모바일 콘텐츠 위치",
+      "values": [
+       "left-top",
+       "left-center",
+       "left-bottom",
+       "center-top",
+       "center-center",
+       "center-bottom",
+       "right-top",
+       "right-center",
+       "right-bottom"
+      ],
+      "valueNames": [
+       "왼쪽 상단",
+       "왼쪽 중앙",
+       "왼쪽 하단",
+       "중앙 상단",
+       "정 중앙",
+       "중앙 하단",
+       "오른쪽 상단",
+       "오른쪽 중앙",
+       "오른쪽 하단"
+      ]
+     },
+     "text-subtext-mb": {
+      "type": "textfield",
+      "label": "텍스트 사이 간격",
+      "suffix": "px"
+     },
+     "text-title-mb": {
+      "type": "textfield",
+      "label": "텍스트·버튼 사이 간격",
+      "suffix": "px"
+     }
+    }
+   },
+   "슬라이드 레이아웃": {
+    "opened": false,
+    "children": {
+     "text-pc-max-height": {
+      "type": "textfield",
+      "label": "PC 최대 높이",
+      "suffix": "px"
+     },
+     "text-mobile-max-height": {
+      "type": "textfield",
+      "label": "모바일 최대 높이",
+      "suffix": "px"
+     },
+     "text-max-content": {
+      "type": "textfield",
+      "label": "콘텐츠 최대 너비",
+      "suffix": "px"
+     },
+     "text-content-top": {
+      "type": "textfield",
+      "label": "내부 상하 여백",
+      "suffix": "px"
+     },
+     "text-slide-radius": {
+      "type": "textfield",
+      "label": "모서리 둥글기",
+      "suffix": "px"
+     },
+     "switch-pagination": {
+      "type": "switch",
+      "label": "페이지네이션 표시"
+     },
+     "color-pagination": {
+      "type": "color",
+      "label": "페이지네이션 컬러"
+     }
+    }
+   },
+   "슬라이드 좌우버튼": {
+    "opened": false,
+    "children": {
+     "segment-arrow-style": {
+      "type": "segment",
+      "label": "화살표 형태",
+      "values": [
+       "line",
+       "angle"
+      ],
+      "valueNames": [
+       "→",
+       ">"
+      ]
+     },
+     "color-arrow": {
+      "type": "color",
+      "label": "화살표 컬러"
+     },
+     "switch-arrows": {
+      "type": "switch",
+      "label": "좌우 버튼 표시"
+     }
+    }
+   },
+   "슬라이드 애니메이션": {
+    "opened": false,
+    "children": {
+     "switch-zoom": {
+      "type": "switch",
+      "label": "오버 시 이미지 확대"
+     },
+     "text-duration": {
+      "type": "textfield",
+      "label": "자동 재생 간격",
+      "suffix": "초"
+     },
+     "text-transition-speed": {
+      "type": "textfield",
+      "label": "전환 속도",
+      "suffix": "ms"
+     }
+    }
+   },
+   "등장 애니메이션": {
+    "opened": false,
+    "children": {
+     "select-anim": {
+      "type": "select",
+      "label": "스타일",
+      "values": [
+       "none",
+       "fade",
+       "slide-up",
+       "slide-down",
+       "slide-left",
+       "slide-right",
+       "zoom-in"
+      ],
+      "valueNames": [
+       "없음",
+       "페이드",
+       "슬라이드인-업",
+       "슬라이드인-다운",
+       "슬라이드인-왼쪽",
+       "슬라이드인-오른쪽",
+       "줌-인"
+      ]
+     },
+     "text-animduration": {
+      "type": "textfield",
+      "label": "지속 시간",
+      "suffix": "초",
+      "placeholder": "0.7"
+     },
+     "text-animdelay": {
+      "type": "textfield",
+      "label": "지연 시간",
+      "suffix": "초",
+      "placeholder": "0"
+     }
+    }
+   }
+  }
+ },
+ {
+  "code": "cw202605207c0d19342469a",
+  "title": "큰 배너 슬라이드",
+  "variables": {
+   "아이템": {
+    "opened": true,
+    "children": {
+     "item-slides": {
+      "type": "item",
+      "label": "슬라이드 목록",
+      "fields": {
+       "color-bgcolor": {
+        "type": "color",
+        "label": "배경 컬러"
+       },
+       "image-bgimagepc": {
+        "type": "image",
+        "label": "PC 배경 이미지"
+       },
+       "image-bgimagemobile": {
+        "type": "image",
+        "label": "모바일 배경 이미지"
+       },
+       "image-contentimage": {
+        "type": "image",
+        "label": "콘텐츠 이미지"
+       },
+       "editor-text2": {
+        "type": "text-editor",
+        "label": "서브 텍스트"
+       },
+       "editor-text1": {
+        "type": "text-editor",
+        "label": "메인 텍스트"
+       },
+       "text-btntext": {
+        "type": "textfield",
+        "label": "버튼 텍스트"
+       },
+       "text-link": {
+        "type": "textfield",
+        "label": "링크 URL",
+        "placeholder": "https://"
+       },
+       "switch-newtab": {
+        "type": "switch",
+        "label": "새 탭으로 열기"
+       },
+       "date-start": {
+        "type": "date",
+        "label": "노출 시작일"
+       },
+       "time-start": {
+        "type": "time",
+        "label": "노출 시작 시간"
+       },
+       "date-end": {
+        "type": "date",
+        "label": "노출 종료일"
+       },
+       "time-end": {
+        "type": "time",
+        "label": "노출 종료 시간"
+       }
+      },
+      "default": [
+       {
+        "color-bgcolor": "",
+        "image-bgimagepc": "",
+        "image-bgimagemobile": "",
+        "image-contentimage": "",
+        "editor-text2": "",
+        "editor-text1": "",
+        "text-btntext": "",
+        "text-link": "",
+        "switch-newtab": false,
+        "date-start": "",
+        "time-start": "",
+        "date-end": "",
+        "time-end": ""
+       },
+       {
+        "color-bgcolor": "",
+        "image-bgimagepc": "",
+        "image-bgimagemobile": "",
+        "image-contentimage": "",
+        "editor-text2": "",
+        "editor-text1": "",
+        "text-btntext": "",
+        "text-link": "",
+        "switch-newtab": false,
+        "date-start": "",
+        "time-start": "",
+        "date-end": "",
+        "time-end": ""
+       },
+       {
+        "color-bgcolor": "",
+        "image-bgimagepc": "",
+        "image-bgimagemobile": "",
+        "image-contentimage": "",
+        "editor-text2": "",
+        "editor-text1": "",
+        "text-btntext": "",
+        "text-link": "",
+        "switch-newtab": false,
+        "date-start": "",
+        "time-start": "",
+        "date-end": "",
+        "time-end": ""
+       }
+      ]
+     }
+    }
+   },
+   "텍스트": {
+    "opened": false,
+    "children": {
+     "text-text1size": {
+      "type": "textfield",
+      "label": "텍스트 1 크기",
+      "suffix": "px"
+     },
+     "color-text1color": {
+      "type": "color",
+      "label": "텍스트 1 컬러"
+     },
+     "text-text2size": {
+      "type": "textfield",
+      "label": "텍스트 2 크기",
+      "suffix": "px"
+     },
+     "color-text2color": {
+      "type": "color",
+      "label": "텍스트 2 컬러"
+     }
+    }
+   },
+   "버튼": {
+    "opened": false,
+    "children": {
+     "text-btntextsize": {
+      "type": "textfield",
+      "label": "텍스트 크기",
+      "suffix": "px"
+     },
+     "color-btntextcolor": {
+      "type": "color",
+      "label": "텍스트 컬러"
+     },
+     "color-btnbgcolor": {
+      "type": "color",
+      "label": "배경 컬러"
+     },
+     "color-btnbordercolor": {
+      "type": "color",
+      "label": "테두리 컬러"
+     },
+     "text-btnborderwidth": {
+      "type": "textfield",
+      "label": "테두리 두께",
+      "suffix": "px"
+     },
+     "text-btnpaddingh": {
+      "type": "textfield",
+      "label": "내부 좌우 여백",
+      "suffix": "px"
+     },
+     "text-btnpaddingv": {
+      "type": "textfield",
+      "label": "내부 상하 여백",
+      "suffix": "px"
+     },
+     "text-btnradius": {
+      "type": "textfield",
+      "label": "모서리 둥글기",
+      "suffix": "px"
+     }
+    }
+   },
+   "콘텐츠 레이아웃": {
+    "opened": false,
+    "children": {
+     "text-textgap": {
+      "type": "textfield",
+      "label": "텍스트 사이 간격",
+      "suffix": "px"
+     },
+     "text-textbtngap": {
+      "type": "textfield",
+      "label": "텍스트-버튼 사이 간격",
+      "suffix": "px"
+     }
+    }
+   },
+   "슬라이드 레이아웃": {
+    "opened": false,
+    "children": {
+     "text-imgradius": {
+      "type": "textfield",
+      "label": "이미지 둥글기 ",
+      "suffix": "px"
+     },
+     "text-cardradius": {
+      "type": "textfield",
+      "label": "슬라이드 모서리 둥글기",
+      "suffix": "px"
+     },
+     "switch-showpeek": {
+      "type": "switch",
+      "label": "이전/다음 슬라이드 노출"
+     }
+    }
+   },
+   "슬라이드 좌우 버튼": {
+    "opened": false,
+    "children": {
+     "color-arrowcolor": {
+      "type": "color",
+      "label": "화살표 컬러"
+     },
+     "color-arrowbgcolor": {
+      "type": "color",
+      "label": "배경 컬러"
+     }
+    }
+   },
+   "슬라이드 애니메이션": {
+    "opened": false,
+    "children": {
+     "text-transitionspeed": {
+      "type": "textfield",
+      "label": "전환 속도",
+      "suffix": "초"
+     },
+     "text-autoplayspeed": {
+      "type": "textfield",
+      "label": "롤링 속도",
+      "suffix": "초"
+     },
+     "switch-autoplay": {
+      "type": "switch",
+      "label": "자동 롤링"
+     }
+    }
+   },
+   "등장 애니메이션": {
+    "opened": false,
+    "children": {
+     "select-anim": {
+      "type": "select",
+      "label": "스타일",
+      "values": [
+       "none",
+       "fade",
+       "slide-up",
+       "slide-down",
+       "slide-left",
+       "slide-right",
+       "zoom-in"
+      ],
+      "valueNames": [
+       "없음",
+       "페이드",
+       "슬라이드인-업",
+       "슬라이드인-다운",
+       "슬라이드인-왼쪽",
+       "슬라이드인-오른쪽",
+       "줌-인"
+      ]
+     },
+     "text-animduration": {
+      "type": "textfield",
+      "label": "지속 시간",
+      "suffix": "초",
+      "placeholder": "0.7"
+     },
+     "text-animdelay": {
+      "type": "textfield",
+      "label": "지연 시간",
+      "suffix": "초",
+      "placeholder": "0"
+     }
+    }
+   }
+  }
+ },
+ {
+  "code": "cw20260520839c4f841d81b",
+  "title": "작은 배너 슬라이드",
+  "variables": {
+   "아이템": {
+    "opened": false,
+    "children": {
+     "item-slides": {
+      "type": "item",
+      "label": "롤링 배너",
+      "fields": {
+       "color-bg": {
+        "type": "color",
+        "label": "배경 컬러"
+       },
+       "image-bg": {
+        "type": "image",
+        "label": "배경 이미지"
+       },
+       "image-content-pc": {
+        "type": "image",
+        "label": "PC 콘텐츠 이미지"
+       },
+       "image-content-mobile": {
+        "type": "image",
+        "label": "모바일 콘텐츠 이미지"
+       },
+       "editor-text1": {
+        "type": "text-editor",
+        "label": "텍스트 1"
+       },
+       "editor-text2": {
+        "type": "text-editor",
+        "label": "텍스트 2"
+       },
+       "text-link": {
+        "type": "textfield",
+        "label": "링크",
+        "placeholder": "https://"
+       },
+       "switch-newtab": {
+        "type": "switch",
+        "label": "새창으로 이동"
+       },
+       "date-start": {
+        "type": "date",
+        "label": "시작 날짜"
+       },
+       "time-start": {
+        "type": "time",
+        "label": "시작 시간"
+       },
+       "date-end": {
+        "type": "date",
+        "label": "종료 날짜"
+       },
+       "time-end": {
+        "type": "time",
+        "label": "종료 시간"
+       }
+      },
+      "default": [
+       {
+        "color-bg": "",
+        "image-bg": "",
+        "image-content-pc": "",
+        "image-content-mobile": "",
+        "editor-text1": "",
+        "editor-text2": "",
+        "text-link": "",
+        "switch-newtab": false,
+        "date-start": "",
+        "time-start": "",
+        "date-end": "",
+        "time-end": ""
+       },
+       {
+        "color-bg": "",
+        "image-bg": "",
+        "image-content-pc": "",
+        "image-content-mobile": "",
+        "editor-text1": "",
+        "editor-text2": "",
+        "text-link": "",
+        "switch-newtab": false,
+        "date-start": "",
+        "time-start": "",
+        "date-end": "",
+        "time-end": ""
+       },
+       {
+        "color-bg": "",
+        "image-bg": "",
+        "image-content-pc": "",
+        "image-content-mobile": "",
+        "editor-text1": "",
+        "editor-text2": "",
+        "text-link": "",
+        "switch-newtab": false,
+        "date-start": "",
+        "time-start": "",
+        "date-end": "",
+        "time-end": ""
+       }
+      ]
+     }
+    }
+   },
+   "텍스트": {
+    "opened": false,
+    "children": {
+     "color-text1": {
+      "type": "color",
+      "label": "텍스트 1 컬러"
+     },
+     "color-text2": {
+      "type": "color",
+      "label": "텍스트 2 컬러"
+     }
+    }
+   },
+   "슬라이드 레이아웃": {
+    "opened": false,
+    "children": {
+     "text-radius": {
+      "type": "textfield",
+      "label": "모서리 둥글기",
+      "suffix": "px"
+     }
+    }
+   },
+   "슬라이드 좌우 버튼": {
+    "opened": false,
+    "children": {
+     "segment-arrow-style": {
+      "type": "segment",
+      "label": "화살표 형태",
+      "values": [
+       "chevron",
+       "arrow"
+      ],
+      "valueNames": [
+       ">",
+       "→"
+      ]
+     },
+     "color-arrow": {
+      "type": "color",
+      "label": "화살표 컬러"
+     },
+     "color-btn-bg": {
+      "type": "color",
+      "label": "버튼 배경 컬러"
+     }
+    }
+   },
+   "슬라이드 애니메이션": {
+    "opened": false,
+    "children": {
+     "text-speed": {
+      "type": "textfield",
+      "label": "전환 속도",
+      "suffix": "초"
+     },
+     "switch-autoplay": {
+      "type": "switch",
+      "label": "자동 재생"
+     }
+    }
+   },
+   "등장 애니메이션": {
+    "opened": false,
+    "children": {
+     "select-anim": {
+      "type": "select",
+      "label": "스타일",
+      "values": [
+       "none",
+       "fade",
+       "slide-up",
+       "slide-down",
+       "slide-left",
+       "slide-right",
+       "zoom-in"
+      ],
+      "valueNames": [
+       "없음",
+       "페이드",
+       "슬라이드인-업",
+       "슬라이드인-다운",
+       "슬라이드인-왼쪽",
+       "슬라이드인-오른쪽",
+       "줌-인"
+      ]
+     },
+     "text-entry-duration": {
+      "type": "textfield",
+      "label": "지속 시간",
+      "suffix": "초"
+     },
+     "text-entry-delay": {
+      "type": "textfield",
+      "label": "지연 시간",
+      "suffix": "초"
+     }
+    }
+   }
+  }
+ },
+ {
+  "code": "cw20260520b453c016a8d0a",
+  "title": "롤링 원형 로고",
+  "variables": {
+   "그룹 33": {
+    "opened": false,
+    "children": {
+     "item-logo": {
+      "type": "item",
+      "label": "롤링 로고",
+      "fields": {
+       "image-logo": {
+        "type": "image",
+        "label": "로고 이미지"
+       }
+      },
+      "default": [
+       {
+        "image-logo": ""
+       },
+       {
+        "image-logo": ""
+       },
+       {
+        "image-logo": ""
+       }
+      ]
+     }
+    }
+   },
+   "레이아웃": {
+    "opened": false,
+    "children": {
+     "text-circle-size": {
+      "type": "textfield",
+      "label": "원형 크기",
+      "suffix": "px"
+     },
+     "text-gap": {
+      "type": "textfield",
+      "label": "로고 간 간격",
+      "suffix": "px"
+     },
+     "color-circle": {
+      "type": "color",
+      "label": "원형 배경 컬러"
+     }
+    }
+   },
+   "배경": {
+    "opened": false,
+    "children": {
+     "color-bg": {
+      "type": "color",
+      "label": "배경 컬러"
+     },
+     "text-padding-v": {
+      "type": "textfield",
+      "label": "내부 상하 여백",
+      "suffix": "px"
+     }
+    }
+   },
+   "효과": {
+    "opened": false,
+    "children": {
+     "switch-grayscale": {
+      "type": "switch",
+      "label": "흑백 이미지"
+     }
+    }
+   },
+   "롤링 애니메이션": {
+    "opened": false,
+    "children": {
+     "segment-direction": {
+      "type": "segment",
+      "label": "방향",
+      "values": [
+       "left",
+       "right"
+      ],
+      "valueNames": [
+       "←",
+       "→"
+      ]
+     },
+     "text-speed": {
+      "type": "textfield",
+      "label": "전환 속도",
+      "suffix": "초"
+     },
+     "switch-hover-pause": {
+      "type": "switch",
+      "label": "마우스 오버 시 정지"
+     }
+    }
+   },
+   "등장 애니메이션": {
+    "opened": false,
+    "children": {
+     "select-anim": {
+      "type": "select",
+      "label": "스타일",
+      "values": [
+       "none",
+       "fade",
+       "slide-up",
+       "slide-down",
+       "slide-left",
+       "slide-right",
+       "zoom-in"
+      ],
+      "valueNames": [
+       "없음",
+       "페이드",
+       "슬라이드인-업",
+       "슬라이드인-다운",
+       "슬라이드인-왼쪽",
+       "슬라이드인-오른쪽",
+       "줌-인"
+      ]
+     },
+     "text-animduration": {
+      "type": "textfield",
+      "label": "지속 시간",
+      "suffix": "초",
+      "placeholder": "0.7"
+     },
+     "text-animdelay": {
+      "type": "textfield",
+      "label": "지연 시간",
+      "suffix": "초",
+      "placeholder": "0"
+     }
+    }
+   }
+  }
+ },
+ {
+  "code": "cw20260520b8b014413258b",
+  "title": "긴 세로 카드",
+  "variables": {
+   "아이템": {
+    "opened": false,
+    "children": {
+     "item-cards": {
+      "type": "item",
+      "label": "카드 아이템",
+      "fields": {
+       "image-icon": {
+        "type": "image",
+        "label": "이미지"
+       },
+       "editor-title": {
+        "type": "text-editor",
+        "label": "타이틀"
+       },
+       "editor-content": {
+        "type": "text-editor",
+        "label": "내용"
+       },
+       "text-link": {
+        "type": "textfield",
+        "label": "링크",
+        "placeholder": "https://"
+       },
+       "switch-newtab": {
+        "type": "switch",
+        "label": "새창으로 이동"
+       }
+      },
+      "default": [
+       {
+        "image-icon": "",
+        "editor-title": "",
+        "editor-content": "",
+        "text-link": "",
+        "switch-newtab": false
+       },
+       {
+        "image-icon": "",
+        "editor-title": "",
+        "editor-content": "",
+        "text-link": "",
+        "switch-newtab": false
+       },
+       {
+        "image-icon": "",
+        "editor-title": "",
+        "editor-content": "",
+        "text-link": "",
+        "switch-newtab": false
+       }
+      ]
+     }
+    }
+   },
+   "텍스트": {
+    "opened": false,
+    "children": {
+     "text-title-size": {
+      "type": "textfield",
+      "label": "타이틀 크기",
+      "suffix": "px"
+     },
+     "color-title": {
+      "type": "color",
+      "label": "타이틀 컬러"
+     },
+     "text-content-size": {
+      "type": "textfield",
+      "label": "내용 크기",
+      "suffix": "px"
+     },
+     "color-content": {
+      "type": "color",
+      "label": "내용 컬러"
+     }
+    }
+   },
+   "이미지": {
+    "opened": false,
+    "children": {
+     "text-icon-size": {
+      "type": "textfield",
+      "label": "이미지 크기",
+      "suffix": "px"
+     }
+    }
+   },
+   "배경": {
+    "opened": false,
+    "children": {
+     "color-card-bg": {
+      "type": "color",
+      "label": "카드 배경 컬러"
+     },
+     "color-card-border": {
+      "type": "color",
+      "label": "테두리 컬러"
+     },
+     "text-card-border-width": {
+      "type": "textfield",
+      "label": "테두리 두께",
+      "suffix": "px"
+     },
+     "text-card-radius": {
+      "type": "textfield",
+      "label": "모서리 둥글기",
+      "suffix": "px"
+     },
+     "switch-shadow": {
+      "type": "switch",
+      "label": "카드 그림자"
+     }
+    }
+   },
+   "레이아웃": {
+    "opened": false,
+    "children": {
+     "segment-style": {
+      "type": "segment",
+      "label": "스타일",
+      "values": [
+       "row",
+       "column"
+      ],
+      "valueNames": [
+       "가로 나열",
+       "세로 나열"
+      ]
+     },
+     "text-text-gap": {
+      "type": "textfield",
+      "label": "타이틀·내용 간격",
+      "suffix": "px"
+     },
+     "text-icon-text-gap": {
+      "type": "textfield",
+      "label": "이미지·텍스트 간격",
+      "suffix": "px"
+     },
+     "text-card-gap": {
+      "type": "textfield",
+      "label": "카드 간격",
+      "suffix": "px"
+     },
+     "text-card-padding-y": {
+      "type": "textfield",
+      "label": "카드 내부 상하 여백",
+      "suffix": "px"
+     },
+     "text-card-padding-x": {
+      "type": "textfield",
+      "label": "카드 내부 좌우 여백",
+      "suffix": "px"
+     }
+    }
+   },
+   "등장 애니메이션": {
+    "opened": false,
+    "children": {
+     "select-anim-style": {
+      "type": "select",
+      "label": "스타일",
+      "values": [
+       "none",
+       "fade",
+       "slide-up",
+       "slide-down",
+       "slide-left",
+       "slide-right",
+       "zoom-in"
+      ],
+      "valueNames": [
+       "없음",
+       "페이드",
+       "슬라이드인-업",
+       "슬라이드인-다운",
+       "슬라이드인-왼쪽",
+       "슬라이드인-오른쪽",
+       "줌-인"
+      ]
+     },
+     "text-anim-duration": {
+      "type": "textfield",
+      "label": "지속 시간",
+      "suffix": "초"
+     },
+     "text-anim-delay": {
+      "type": "textfield",
+      "label": "지연 시간",
+      "suffix": "초"
+     }
+    }
+   }
+  }
+ },
+ {
+  "code": "cw20260520bd6f8a82535ba",
+  "title": "롤링 기본 로고",
+  "variables": {
+   "아이템": {
+    "opened": false,
+    "children": {
+     "item-logos": {
+      "type": "item",
+      "label": "롤링 로고",
+      "fields": {
+       "image-logo": {
+        "type": "image",
+        "label": "로고 이미지"
+       }
+      },
+      "default": [
+       {
+        "image-logo": ""
+       },
+       {
+        "image-logo": ""
+       },
+       {
+        "image-logo": ""
+       }
+      ]
+     }
+    }
+   },
+   "레이아웃": {
+    "opened": false,
+    "children": {
+     "text-logo-size": {
+      "type": "textfield",
+      "label": "로고 크기",
+      "suffix": "px"
+     },
+     "text-logo-gap": {
+      "type": "textfield",
+      "label": "로고 간 간격",
+      "suffix": "px"
+     },
+     "text-padding-y": {
+      "type": "textfield",
+      "label": "내부 상하 여백",
+      "suffix": "px"
+     },
+     "color-bg": {
+      "type": "color",
+      "label": "배경 컬러"
+     }
+    }
+   },
+   "효과": {
+    "opened": false,
+    "children": {
+     "switch-grayscale": {
+      "type": "switch",
+      "label": "흑백 이미지"
+     }
+    }
+   },
+   "롤링 애니메이션": {
+    "opened": false,
+    "children": {
+     "text-anim-speed": {
+      "type": "textfield",
+      "label": "전환 속도",
+      "suffix": "초"
+     },
+     "segment-direction": {
+      "type": "segment",
+      "label": "방향",
+      "values": [
+       "left",
+       "right"
+      ],
+      "valueNames": [
+       "←",
+       "→"
+      ]
+     },
+     "switch-pause-hover": {
+      "type": "switch",
+      "label": "마우스 오버 시 정지"
+     }
+    }
+   },
+   "등장 애니메이션": {
+    "opened": false,
+    "children": {
+     "select-anim": {
+      "type": "select",
+      "label": "스타일",
+      "values": [
+       "none",
+       "fade",
+       "slide-up",
+       "slide-down",
+       "slide-left",
+       "slide-right",
+       "zoom-in"
+      ],
+      "valueNames": [
+       "없음",
+       "페이드",
+       "슬라이드인-업",
+       "슬라이드인-다운",
+       "슬라이드인-왼쪽",
+       "슬라이드인-오른쪽",
+       "줌-인"
+      ]
+     },
+     "text-animduration": {
+      "type": "textfield",
+      "label": "지속 시간",
+      "suffix": "초",
+      "placeholder": "0.7"
+     },
+     "text-animdelay": {
+      "type": "textfield",
+      "label": "지연 시간",
+      "suffix": "초",
+      "placeholder": "0"
+     }
+    }
+   }
+  }
+ },
+ {
+  "code": "cw20260520c1e6f9c4a7ac2",
+  "title": "가로 카드 슬라이드",
+  "variables": {
+   "아이템": {
+    "opened": true,
+    "children": {
+     "item-1": {
+      "type": "item",
+      "label": "롤링 아이템",
+      "fields": {
+       "image-1": {
+        "type": "image",
+        "label": "카드 이미지"
+       },
+       "editor-1": {
+        "type": "text-editor",
+        "label": "텍스트 1"
+       },
+       "editor-2": {
+        "type": "text-editor",
+        "label": "텍스트 2"
+       },
+       "text-1": {
+        "type": "textfield",
+        "label": "버튼 문구",
+        "placeholder": "버튼 문구 입력"
+       },
+       "text-2": {
+        "type": "textfield",
+        "label": "링크",
+        "placeholder": "https://"
+       },
+       "switch-1": {
+        "type": "switch",
+        "label": "새창으로 이동"
+       },
+       "date-1": {
+        "type": "date",
+        "label": "시작 날짜"
+       },
+       "time-1": {
+        "type": "time",
+        "label": "시작 시간"
+       },
+       "date-2": {
+        "type": "date",
+        "label": "종료 날짜"
+       },
+       "time-2": {
+        "type": "time",
+        "label": "종료 시간"
+       }
+      },
+      "default": [
+       {
+        "image-1": "",
+        "editor-1": "",
+        "editor-2": "",
+        "text-1": "",
+        "text-2": "",
+        "switch-1": false,
+        "date-1": "",
+        "time-1": "",
+        "date-2": "",
+        "time-2": ""
+       },
+       {
+        "image-1": "",
+        "editor-1": "",
+        "editor-2": "",
+        "text-1": "",
+        "text-2": "",
+        "switch-1": false,
+        "date-1": "",
+        "time-1": "",
+        "date-2": "",
+        "time-2": ""
+       },
+       {
+        "image-1": "",
+        "editor-1": "",
+        "editor-2": "",
+        "text-1": "",
+        "text-2": "",
+        "switch-1": false,
+        "date-1": "",
+        "time-1": "",
+        "date-2": "",
+        "time-2": ""
+       }
+      ]
+     }
+    }
+   },
+   "텍스트": {
+    "opened": false,
+    "children": {
+     "text-17": {
+      "type": "textfield",
+      "label": "타이틀 문구"
+     },
+     "text-3": {
+      "type": "textfield",
+      "label": "타이틀 텍스트 크기",
+      "suffix": "px"
+     },
+     "color-1": {
+      "type": "color",
+      "label": "타이틀 텍스트 컬러"
+     },
+     "text-4": {
+      "type": "textfield",
+      "label": "텍스트 1 크기",
+      "suffix": "px"
+     },
+     "color-2": {
+      "type": "color",
+      "label": "텍스트 1 컬러"
+     },
+     "text-5": {
+      "type": "textfield",
+      "label": "텍스트 2 크기",
+      "suffix": "px"
+     },
+     "color-3": {
+      "type": "color",
+      "label": "텍스트 2 컬러"
+     }
+    }
+   },
+   "버튼": {
+    "opened": false,
+    "children": {
+     "text-18": {
+      "type": "textfield",
+      "label": "버튼 텍스트 크기",
+      "suffix": "px"
+     },
+     "color-7": {
+      "type": "color",
+      "label": "버튼 텍스트 컬러"
+     },
+     "color-8": {
+      "type": "color",
+      "label": "버튼 배경 컬러"
+     },
+     "color-9": {
+      "type": "color",
+      "label": "버튼 테두리 컬러"
+     },
+     "text-20": {
+      "type": "textfield",
+      "label": "버튼 테두리 두께",
+      "suffix": "px"
+     },
+     "text-21": {
+      "type": "textfield",
+      "label": "버튼 모서리 둥글기",
+      "suffix": "px"
+     }
+    }
+   },
+   "카드 레이아웃": {
+    "opened": false,
+    "children": {
+     "segment-3": {
+      "type": "segment",
+      "label": "이미지 위치",
+      "values": [
+       "left",
+       "right"
+      ],
+      "valueNames": [
+       "왼쪽",
+       "오른쪽"
+      ]
+     },
+     "text-7": {
+      "type": "textfield",
+      "label": "텍스트 사이 간격",
+      "suffix": "px"
+     },
+     "text-8": {
+      "type": "textfield",
+      "label": "텍스트·버튼 사이 간격",
+      "suffix": "px"
+     },
+     "text-10": {
+      "type": "textfield",
+      "label": "내부 상하 여백",
+      "suffix": "px"
+     },
+     "text-9": {
+      "type": "textfield",
+      "label": "내부 좌우 여백",
+      "suffix": "px"
+     }
+    }
+   },
+   "카드 이미지": {
+    "opened": false,
+    "children": {
+     "text-22": {
+      "type": "textfield",
+      "label": "PC 모서리 둥글기 ",
+      "suffix": "px"
+     },
+     "text-23": {
+      "type": "textfield",
+      "label": "모바일 모서리 둥글기 ",
+      "suffix": "px"
+     }
+    }
+   },
+   "카드 배경": {
+    "opened": false,
+    "children": {
+     "color-4": {
+      "type": "color",
+      "label": "카드 배경 컬러"
+     },
+     "color-5": {
+      "type": "color",
+      "label": "테두리 컬러"
+     },
+     "text-11": {
+      "type": "textfield",
+      "label": "테두리 두께",
+      "suffix": "px"
+     },
+     "text-12": {
+      "type": "textfield",
+      "label": "카드 모서리 둥글기",
+      "suffix": "px"
+     }
+    }
+   },
+   "슬라이드 레이아웃": {
+    "opened": false,
+    "children": {
+     "text-13": {
+      "type": "textfield",
+      "label": "타이틀·슬라이드 간격",
+      "suffix": "px"
+     },
+     "text-14": {
+      "type": "textfield",
+      "label": "카드 간 간격",
+      "suffix": "px"
+     }
+    }
+   },
+   "슬라이드 좌우 버튼": {
+    "opened": false,
+    "children": {
+     "text-15": {
+      "type": "textfield",
+      "label": "좌우 버튼 크기",
+      "suffix": "px"
+     },
+     "segment-2": {
+      "type": "segment",
+      "label": "화살표 형태",
+      "values": [
+       "chevron",
+       "line"
+      ],
+      "valueNames": [
+       ">",
+       "->"
+      ]
+     },
+     "color-6": {
+      "type": "color",
+      "label": "화살표 컬러"
+     }
+    }
+   },
+   "슬라이드 애니메이션": {
+    "opened": false,
+    "children": {
+     "text-16": {
+      "type": "textfield",
+      "label": "전환 속도",
+      "suffix": "초"
+     },
+     "switch-2": {
+      "type": "switch",
+      "label": "자동 전환"
+     },
+     "switch-3": {
+      "type": "switch",
+      "label": "무한 슬라이드"
+     },
+     "switch-4": {
+      "type": "switch",
+      "label": "마우스 오버 시 이미지 확대"
+     }
+    }
+   },
+   "등장 애니메이션": {
+    "opened": false,
+    "children": {
+     "select-anim": {
+      "type": "select",
+      "label": "스타일",
+      "values": [
+       "none",
+       "fade",
+       "slide-up",
+       "slide-down",
+       "slide-left",
+       "slide-right",
+       "zoom-in"
+      ],
+      "valueNames": [
+       "없음",
+       "페이드",
+       "슬라이드인-업",
+       "슬라이드인-다운",
+       "슬라이드인-왼쪽",
+       "슬라이드인-오른쪽",
+       "줌-인"
+      ]
+     },
+     "text-animduration": {
+      "type": "textfield",
+      "label": "지속 시간",
+      "suffix": "초"
+     },
+     "text-animdelay": {
+      "type": "textfield",
+      "label": "지연 시간",
+      "suffix": "초"
+     }
+    }
+   }
+  }
+ },
+ {
+  "code": "cw20260520c674a654bb439",
+  "title": "박스 아코디언",
+  "variables": {
+   "아이템": {
+    "opened": false,
+    "children": {
+     "item-accordion": {
+      "type": "item",
+      "label": "아코디언",
+      "fields": {
+       "text-title": {
+        "type": "textfield",
+        "label": "타이틀"
+       },
+       "editor-content": {
+        "type": "text-editor",
+        "label": "내용"
+       }
+      },
+      "default": [
+       {
+        "text-title": "",
+        "editor-content": ""
+       },
+       {
+        "text-title": "",
+        "editor-content": ""
+       },
+       {
+        "text-title": "",
+        "editor-content": ""
+       }
+      ]
+     }
+    }
+   },
+   "텍스트": {
+    "opened": false,
+    "children": {
+     "text-title-size": {
+      "type": "textfield",
+      "label": "타이틀 크기",
+      "suffix": "px"
+     },
+     "color-title": {
+      "type": "color",
+      "label": "타이틀 컬러"
+     },
+     "text-content-size": {
+      "type": "textfield",
+      "label": "내용 크기",
+      "suffix": "px"
+     },
+     "color-content": {
+      "type": "color",
+      "label": "내용 컬러"
+     }
+    }
+   },
+   "아이콘": {
+    "opened": false,
+    "children": {
+     "segment-icon-type": {
+      "type": "segment",
+      "label": "형태",
+      "values": [
+       "plus",
+       "chevron"
+      ],
+      "valueNames": [
+       "+",
+       "^"
+      ]
+     },
+     "color-icon": {
+      "type": "color",
+      "label": "아이콘 컬러"
+     }
+    }
+   },
+   "배경": {
+    "opened": false,
+    "children": {
+     "color-title-bg": {
+      "type": "color",
+      "label": "타이틀 배경 컬러"
+     },
+     "color-content-bg": {
+      "type": "color",
+      "label": "내용 배경 컬러"
+     },
+     "color-border": {
+      "type": "color",
+      "label": "테두리 컬러"
+     },
+     "text-border-width": {
+      "type": "textfield",
+      "label": "테두리 두께",
+      "suffix": "px"
+     },
+     "text-border-radius": {
+      "type": "textfield",
+      "label": "모서리 둥글기",
+      "suffix": "px"
+     }
+    }
+   },
+   "레이아웃": {
+    "opened": false,
+    "children": {
+     "text-title-padding-v": {
+      "type": "textfield",
+      "label": "타이틀 내부 상하 여백",
+      "suffix": "px"
+     },
+     "text-title-padding-h": {
+      "type": "textfield",
+      "label": "타이틀 내부 좌우 여백",
+      "suffix": "px"
+     },
+     "text-content-padding-top": {
+      "type": "textfield",
+      "label": "내용 내부 상 여백",
+      "suffix": "px"
+     },
+     "text-content-padding-bottom": {
+      "type": "textfield",
+      "label": "내용 내부 하 여백",
+      "suffix": "px"
+     },
+     "text-content-padding-h": {
+      "type": "textfield",
+      "label": "내용 내부 좌우 여백",
+      "suffix": "px"
+     }
+    }
+   },
+   "동작": {
+    "opened": true,
+    "children": {
+     "switch-single-open": {
+      "type": "switch",
+      "label": "한 번에 하나만 열기"
+     },
+     "select-initial-open": {
+      "type": "select",
+      "label": "초기 펼침 상태",
+      "values": [
+       "all",
+       "first",
+       "none"
+      ],
+      "valueNames": [
+       "전체 펼침",
+       "첫번째만 펼침",
+       "전체 닫힘"
+      ]
+     }
+    }
+   },
+   "등장 애니메이션": {
+    "opened": false,
+    "children": {
+     "select-anim": {
+      "type": "select",
+      "label": "스타일",
+      "values": [
+       "none",
+       "fade",
+       "slide-up",
+       "slide-down",
+       "slide-left",
+       "slide-right",
+       "zoom-in"
+      ],
+      "valueNames": [
+       "없음",
+       "페이드",
+       "슬라이드인-업",
+       "슬라이드인-다운",
+       "슬라이드인-왼쪽",
+       "슬라이드인-오른쪽",
+       "줌-인"
+      ]
+     },
+     "text-anim-duration": {
+      "type": "textfield",
+      "label": "지속 시간",
+      "suffix": "초"
+     },
+     "text-anim-delay": {
+      "type": "textfield",
+      "label": "지연 시간",
+      "suffix": "초"
+     }
+    }
+   }
+  }
+ },
+ {
+  "code": "cw20260520ca3f2f4ecc4a7",
+  "title": "이미지 위 텍스트 카드",
+  "variables": {
+   "아이템": {
+    "opened": false,
+    "children": {
+     "item-cards": {
+      "type": "item",
+      "label": "카드 아이템",
+      "fields": {
+       "image-bg-pc": {
+        "type": "image",
+        "label": "PC 카드 이미지"
+       },
+       "image-bg-mo": {
+        "type": "image",
+        "label": "모바일 카드 이미지"
+       },
+       "text-image-alt": {
+        "type": "textfield",
+        "label": "이미지 대체 텍스트"
+       },
+       "color-overlay": {
+        "type": "color",
+        "label": "음영"
+       },
+       "editor-text1": {
+        "type": "text-editor",
+        "label": "텍스트 1"
+       },
+       "editor-text2": {
+        "type": "text-editor",
+        "label": "텍스트 2"
+       },
+       "text-link": {
+        "type": "textfield",
+        "label": "링크",
+        "placeholder": "https://"
+       },
+       "switch-newtab": {
+        "type": "switch",
+        "label": "새창으로 이동"
+       }
+      },
+      "default": [
+       {
+        "image-bg-pc": "",
+        "image-bg-mo": "",
+        "text-image-alt": "",
+        "color-overlay": "",
+        "editor-text1": "",
+        "editor-text2": "",
+        "text-link": "",
+        "switch-newtab": false
+       },
+       {
+        "image-bg-pc": "",
+        "image-bg-mo": "",
+        "text-image-alt": "",
+        "color-overlay": "",
+        "editor-text1": "",
+        "editor-text2": "",
+        "text-link": "",
+        "switch-newtab": false
+       },
+       {
+        "image-bg-pc": "",
+        "image-bg-mo": "",
+        "text-image-alt": "",
+        "color-overlay": "",
+        "editor-text1": "",
+        "editor-text2": "",
+        "text-link": "",
+        "switch-newtab": false
+       }
+      ]
+     }
+    }
+   },
+   "텍스트": {
+    "opened": false,
+    "children": {
+     "text-text1size": {
+      "type": "textfield",
+      "label": "텍스트 1 크기",
+      "suffix": "px",
+      "placeholder": "30"
+     },
+     "color-text1": {
+      "type": "color",
+      "label": "텍스트 1 컬러"
+     },
+     "text-text2size": {
+      "type": "textfield",
+      "label": "텍스트 2 크기",
+      "suffix": "px",
+      "placeholder": "14"
+     },
+     "color-text2": {
+      "type": "color",
+      "label": "텍스트 2 컬러"
+     },
+     "select-position": {
+      "type": "select",
+      "label": "텍스트 위치",
+      "values": [
+       "top-left",
+       "top-center",
+       "top-right",
+       "middle-left",
+       "middle-center",
+       "middle-right",
+       "bottom-left",
+       "bottom-center",
+       "bottom-right"
+      ],
+      "valueNames": [
+       "왼쪽 상단",
+       "가운데 상단",
+       "오른쪽 상단",
+       "왼쪽 중앙",
+       "가운데 중앙",
+       "오른쪽 중앙",
+       "왼쪽 하단",
+       "가운데 하단",
+       "오른쪽 하단"
+      ]
+     },
+     "text-textgap": {
+      "type": "textfield",
+      "label": "텍스트 사이 간격",
+      "suffix": "px",
+      "placeholder": "14"
+     }
+    }
+   },
+   "카드 레이아웃": {
+    "opened": false,
+    "children": {
+     "select-layout-pc": {
+      "type": "segment",
+      "label": "PC 배열",
+      "values": [
+       "horizontal",
+       "vertical"
+      ],
+      "valueNames": [
+       "가로 나열",
+       "세로 나열"
+      ]
+     },
+     "text-cardheight-pc": {
+      "type": "textfield",
+      "label": "PC 카드 높이",
+      "suffix": "px",
+      "placeholder": "360"
+     },
+     "text-cardheight-mo": {
+      "type": "textfield",
+      "label": "모바일 카드 높이",
+      "suffix": "px",
+      "placeholder": "260"
+     },
+     "text-padx": {
+      "type": "textfield",
+      "label": "내부 좌우 여백",
+      "suffix": "px",
+      "placeholder": "24"
+     },
+     "text-pady": {
+      "type": "textfield",
+      "label": "내부 상하 여백",
+      "suffix": "px",
+      "placeholder": "24"
+     }
+    }
+   },
+   "테두리": {
+    "opened": false,
+    "children": {
+     "color-border": {
+      "type": "color",
+      "label": "테두리 컬러"
+     },
+     "text-borderwidth": {
+      "type": "textfield",
+      "label": "선 두께 ",
+      "suffix": "px",
+      "placeholder": "0"
+     },
+     "text-radius": {
+      "type": "textfield",
+      "label": "모서리 둥글기 ",
+      "suffix": "px",
+      "placeholder": "8"
+     }
+    }
+   },
+   "효과": {
+    "opened": false,
+    "children": {
+     "switch-hoverzoom": {
+      "type": "switch",
+      "label": "마우스 오버 시 이미지 확대"
+     },
+     "switch-shadow": {
+      "type": "switch",
+      "label": "카드 그림자 사용"
+     }
+    }
+   },
+   "등장 애니메이션": {
+    "opened": false,
+    "children": {
+     "select-anim": {
+      "type": "select",
+      "label": "스타일",
+      "values": [
+       "none",
+       "fade",
+       "slide-up",
+       "slide-down",
+       "slide-left",
+       "slide-right",
+       "zoom-in"
+      ],
+      "valueNames": [
+       "없음",
+       "페이드",
+       "슬라이드인-업",
+       "슬라이드인-다운",
+       "슬라이드인-왼쪽",
+       "슬라이드인-오른쪽",
+       "줌-인"
+      ]
+     },
+     "text-animduration": {
+      "type": "textfield",
+      "label": "지속 시간",
+      "suffix": "초",
+      "placeholder": "0.7"
+     },
+     "text-animdelay": {
+      "type": "textfield",
+      "label": "지연 시간",
+      "suffix": "초",
+      "placeholder": "0"
+     }
+    }
+   }
+  }
+ },
+ {
+  "code": "cw20260520cc82d639397da",
+  "title": "큰 타이머",
+  "variables": {
+   "타이머": {
+    "opened": false,
+    "children": {
+     "date-end": {
+      "type": "date",
+      "label": "종료 날짜",
+      "placeholder": "마감될 날짜 선택"
+     },
+     "time-end": {
+      "type": "time",
+      "label": "종료 시간"
+     }
+    }
+   },
+   "텍스트": {
+    "opened": false,
+    "children": {
+     "text-number-size": {
+      "type": "textfield",
+      "label": "시간 크기",
+      "suffix": "px"
+     },
+     "color-number": {
+      "type": "color",
+      "label": "시간 컬러"
+     },
+     "text-unit-size": {
+      "type": "textfield",
+      "label": "텍스트 크기",
+      "suffix": "px"
+     },
+     "color-unit": {
+      "type": "color",
+      "label": "텍스트 컬러"
+     },
+     "switch-colon": {
+      "type": "switch",
+      "label": "타이머 콜론"
+     },
+     "text-colon-size": {
+      "type": "textfield",
+      "label": "콜론 크기",
+      "suffix": "px"
+     },
+     "color-colon": {
+      "type": "color",
+      "label": "콜론 컬러"
+     }
+    }
+   },
+   "레이아웃": {
+    "opened": false,
+    "children": {
+     "text-card-gap": {
+      "type": "textfield",
+      "label": "숫자·텍스트 간격",
+      "suffix": "px"
+     },
+     "text-gap": {
+      "type": "textfield",
+      "label": "타이머 간 간격",
+      "suffix": "px"
+     },
+     "segment-align": {
+      "type": "segment",
+      "label": "정렬",
+      "values": [
+       "left",
+       "center",
+       "right"
+      ],
+      "valueNames": [
+       "왼쪽",
+       "가운데",
+       "오른쪽"
+      ]
+     }
+    }
+   },
+   "배경": {
+    "opened": false,
+    "children": {
+     "color-card-bg": {
+      "type": "color",
+      "label": "배경 컬러"
+     },
+     "color-border": {
+      "type": "color",
+      "label": "테두리 컬러"
+     },
+     "text-border-width": {
+      "type": "textfield",
+      "label": "테두리 두께",
+      "suffix": "px"
+     },
+     "text-padding-y": {
+      "type": "textfield",
+      "label": "내부 상하 여백",
+      "suffix": "px"
+     },
+     "text-padding-x": {
+      "type": "textfield",
+      "label": "내부 좌우 여백",
+      "suffix": "px"
+     },
+     "text-radius": {
+      "type": "textfield",
+      "label": "모서리 둥글기",
+      "suffix": "px"
+     }
+    }
+   },
+   "애니메이션": {
+    "opened": false,
+    "children": {
+     "select-anim": {
+      "type": "select",
+      "label": "스타일",
+      "values": [
+       "none",
+       "fade",
+       "slide-up",
+       "slide-down",
+       "slide-left",
+       "slide-right",
+       "zoom-in"
+      ],
+      "valueNames": [
+       "없음",
+       "페이드",
+       "슬라이드인-업",
+       "슬라이드인-다운",
+       "슬라이드인-왼쪽",
+       "슬라이드인-오른쪽",
+       "줌-인"
+      ]
+     },
+     "text-animduration": {
+      "type": "textfield",
+      "label": "지속 시간",
+      "suffix": "초",
+      "placeholder": "0.7"
+     },
+     "text-animdelay": {
+      "type": "textfield",
+      "label": "지연 시간",
+      "suffix": "초",
+      "placeholder": "0"
+     }
+    }
+   }
+  }
+ },
+ {
+  "code": "cw20260520dd243bf4b872d",
+  "title": "이미지 가로 카드",
+  "variables": {
+   "아이템": {
+    "opened": false,
+    "children": {
+     "item-cards": {
+      "type": "item",
+      "label": "카드 목록",
+      "fields": {
+       "image-card": {
+        "type": "image",
+        "label": "카드 이미지"
+       },
+       "editor-title1": {
+        "type": "text-editor",
+        "label": "타이틀 1"
+       },
+       "editor-title2": {
+        "type": "text-editor",
+        "label": "타이틀 2"
+       },
+       "editor-subtext": {
+        "type": "text-editor",
+        "label": "서브 텍스트"
+       },
+       "text-link": {
+        "type": "textfield",
+        "label": "링크",
+        "placeholder": "https://"
+       },
+       "switch-newtab": {
+        "type": "switch",
+        "label": "새창으로 이동"
+       }
+      },
+      "default": [
+       {
+        "image-card": "",
+        "editor-title1": "",
+        "editor-title2": "",
+        "editor-subtext": "",
+        "text-link": "",
+        "switch-newtab": false
+       },
+       {
+        "image-card": "",
+        "editor-title1": "",
+        "editor-title2": "",
+        "editor-subtext": "",
+        "text-link": "",
+        "switch-newtab": false
+       },
+       {
+        "image-card": "",
+        "editor-title1": "",
+        "editor-title2": "",
+        "editor-subtext": "",
+        "text-link": "",
+        "switch-newtab": false
+       }
+      ]
+     }
+    }
+   },
+   "타이틀": {
+    "opened": false,
+    "children": {
+     "text-title1size": {
+      "type": "textfield",
+      "label": "타이틀 1 크기",
+      "suffix": "px",
+      "placeholder": "30"
+     },
+     "color-title1": {
+      "type": "color",
+      "label": "타이틀 1 컬러"
+     },
+     "text-title2size": {
+      "type": "textfield",
+      "label": "타이틀 2 크기",
+      "suffix": "px",
+      "placeholder": "14"
+     },
+     "color-title2": {
+      "type": "color",
+      "label": "타이틀 2 컬러"
+     },
+     "text-subtextsize": {
+      "type": "textfield",
+      "label": "서브 텍스트 크기",
+      "suffix": "px",
+      "placeholder": "14"
+     },
+     "color-subtext": {
+      "type": "color",
+      "label": "서브 텍스트 컬러"
+     }
+    }
+   },
+   "이미지": {
+    "opened": false,
+    "children": {
+     "text-imagewidth": {
+      "type": "textfield",
+      "label": "이미지 너비",
+      "suffix": "px",
+      "placeholder": "180"
+     },
+     "text-imgradius": {
+      "type": "textfield",
+      "label": "이미지 모서리 둥글기",
+      "suffix": "px",
+      "placeholder": "8"
+     },
+     "select-imageratio": {
+      "type": "select",
+      "label": "이미지 비율",
+      "values": [
+       "r1-1",
+       "r4-3",
+       "r3-4",
+       "r16-9",
+       "r9-16"
+      ],
+      "valueNames": [
+       "1:1",
+       "4:3",
+       "3:4",
+       "16:9",
+       "9:16"
+      ]
+     },
+     "segment-imagepos": {
+      "type": "segment",
+      "label": "이미지 위치",
+      "values": [
+       "left",
+       "right"
+      ],
+      "valueNames": [
+       "왼쪽",
+       "오른쪽"
+      ]
+     }
+    }
+   },
+   "레이아웃": {
+    "opened": false,
+    "children": {
+     "select-direction": {
+      "type": "segment",
+      "label": "PC 카드 배열",
+      "values": [
+       "horizontal",
+       "vertical"
+      ],
+      "valueNames": [
+       "가로 배열 ",
+       "세로 배열"
+      ]
+     },
+     "text-titlegap": {
+      "type": "textfield",
+      "label": "타이틀 1·2 간격",
+      "suffix": "px",
+      "placeholder": "14"
+     },
+     "text-padx": {
+      "type": "textfield",
+      "label": "내부 좌우 여백",
+      "suffix": "px",
+      "placeholder": "24"
+     },
+     "text-pady": {
+      "type": "textfield",
+      "label": "내부 상하 여백",
+      "suffix": "px",
+      "placeholder": "24"
+     }
+    }
+   },
+   "배경": {
+    "opened": false,
+    "children": {
+     "color-bg": {
+      "type": "color",
+      "label": "배경 컬러"
+     },
+     "color-border": {
+      "type": "color",
+      "label": "테두리 컬러"
+     },
+     "text-borderwidth": {
+      "type": "textfield",
+      "label": "선 두께 ",
+      "suffix": "px",
+      "placeholder": "0"
+     },
+     "text-radius": {
+      "type": "textfield",
+      "label": "모서리 둥글기",
+      "suffix": "px",
+      "placeholder": "16"
+     }
+    }
+   },
+   "효과": {
+    "opened": false,
+    "children": {
+     "switch-hoverzoom": {
+      "type": "switch",
+      "label": "마우스 오버 시 이미지 확대"
+     },
+     "switch-shadow": {
+      "type": "switch",
+      "label": "카드 그림자"
+     }
+    }
+   },
+   "애니메이션": {
+    "opened": false,
+    "children": {
+     "select-anim": {
+      "type": "select",
+      "label": "스타일",
+      "values": [
+       "none",
+       "fade",
+       "slide-up",
+       "slide-down",
+       "slide-left",
+       "slide-right",
+       "zoom-in"
+      ],
+      "valueNames": [
+       "없음",
+       "페이드",
+       "슬라이드인-업",
+       "슬라이드인-다운",
+       "슬라이드인-왼쪽",
+       "슬라이드인-오른쪽",
+       "줌-인"
+      ]
+     },
+     "text-animduration": {
+      "type": "textfield",
+      "label": "지속 시간",
+      "suffix": "초",
+      "placeholder": "0.7"
+     },
+     "text-animdelay": {
+      "type": "textfield",
+      "label": "지연 시간",
+      "suffix": "초",
+      "placeholder": "0"
+     }
+    }
+   }
+  }
+ },
+ {
+  "code": "cw20260520f64b0386a5030",
+  "title": "롤링 띠 배너",
+  "variables": {
+   "아이템": {
+    "opened": true,
+    "children": {
+     "items": {
+      "type": "item",
+      "label": "롤링 텍스트",
+      "fields": {
+       "text": {
+        "type": "textfield",
+        "label": "텍스트",
+        "placeholder": "롤링될 문구 입력"
+       }
+      },
+      "default": [
+       {
+        "text": ""
+       },
+       {
+        "text": ""
+       },
+       {
+        "text": ""
+       }
+      ]
+     }
+    }
+   },
+   "레이아웃": {
+    "opened": false,
+    "children": {
+     "num-size": {
+      "type": "textfield",
+      "label": "텍스트 크기",
+      "suffix": "px"
+     },
+     "num-gap": {
+      "type": "textfield",
+      "label": "텍스트 간 간격",
+      "suffix": "px"
+     },
+     "color-text": {
+      "type": "color",
+      "label": "텍스트 컬러"
+     },
+     "num-padding-y": {
+      "type": "textfield",
+      "label": "내부 상하 여백",
+      "suffix": "px"
+     },
+     "color-bg": {
+      "type": "color",
+      "label": "배경 컬러"
+     }
+    }
+   },
+   "롤링 애니메이션": {
+    "opened": false,
+    "children": {
+     "num-speed": {
+      "type": "textfield",
+      "label": "전환 속도",
+      "suffix": "초"
+     },
+     "segment-direction": {
+      "type": "segment",
+      "label": "방향",
+      "values": [
+       "left",
+       "right"
+      ],
+      "valueNames": [
+       "왼쪽",
+       "오른쪽"
+      ]
+     },
+     "switch-hover-pause": {
+      "type": "switch",
+      "label": "마우스 오버 시 정지"
+     }
+    }
+   },
+   "등장 애니메이션": {
+    "opened": false,
+    "children": {
+     "select-anim": {
+      "type": "select",
+      "label": "스타일",
+      "values": [
+       "none",
+       "fade",
+       "slide-up",
+       "slide-down",
+       "slide-left",
+       "slide-right",
+       "zoom-in"
+      ],
+      "valueNames": [
+       "없음",
+       "페이드",
+       "슬라이드인-업",
+       "슬라이드인-다운",
+       "슬라이드인-왼쪽",
+       "슬라이드인-오른쪽",
+       "줌-인"
+      ]
+     },
+     "text-animduration": {
+      "type": "textfield",
+      "label": "지속 시간",
+      "suffix": "초",
+      "placeholder": "0.7"
+     },
+     "text-animdelay": {
+      "type": "textfield",
+      "label": "지연 시간",
+      "suffix": "초",
+      "placeholder": "0"
+     }
+    }
+   }
+  }
+ },
+ {
+  "code": "cw20260520fc1048bce0fb1",
+  "title": "작은 타이머",
+  "variables": {
+   "타이머": {
+    "opened": false,
+    "children": {
+     "date-end": {
+      "type": "date",
+      "label": "종료 날짜",
+      "placeholder": "마감될 날짜 선택"
+     },
+     "time-end": {
+      "type": "time",
+      "label": "종료 시간"
+     }
+    }
+   },
+   "문구": {
+    "opened": false,
+    "children": {
+     "text-prefix": {
+      "type": "textfield",
+      "label": "앞쪽 고정 텍스트",
+      "placeholder": "앞쪽 고정 문구 입력"
+     },
+     "text-suffix": {
+      "type": "textfield",
+      "label": "뒤쪽 고정 텍스트",
+      "placeholder": "뒤쪽 고정 문구 입력"
+     }
+    }
+   },
+   "스타일": {
+    "opened": false,
+    "children": {
+     "text-font-size": {
+      "type": "textfield",
+      "label": "텍스트 크기",
+      "suffix": "px"
+     },
+     "color-text": {
+      "type": "color",
+      "label": "고정 텍스트 컬러"
+     },
+     "color-icon": {
+      "type": "color",
+      "label": "아이콘 컬러"
+     },
+     "color-time": {
+      "type": "color",
+      "label": "시간 컬러"
+     }
+    }
+   },
+   "레이아웃": {
+    "opened": false,
+    "children": {
+     "segment-align": {
+      "type": "segment",
+      "label": "정렬",
+      "values": [
+       "left",
+       "center",
+       "right"
+      ],
+      "valueNames": [
+       "왼쪽",
+       "가운데",
+       "오른쪽"
+      ]
+     }
+    }
+   },
+   "등장 애니메이션": {
+    "opened": false,
+    "children": {
+     "select-anim": {
+      "type": "select",
+      "label": "스타일",
+      "values": [
+       "none",
+       "fade",
+       "slide-up",
+       "slide-down",
+       "slide-left",
+       "slide-right",
+       "zoom-in"
+      ],
+      "valueNames": [
+       "없음",
+       "페이드",
+       "슬라이드-업",
+       "슬라이드-다운",
+       "슬라이드-왼쪽",
+       "슬라이드-오른쪽",
+       "줌-인"
+      ]
+     },
+     "text-animduration": {
+      "type": "textfield",
+      "label": "지속 시간",
+      "suffix": "초",
+      "placeholder": "0.7"
+     },
+     "text-animdelay": {
+      "type": "textfield",
+      "label": "지연 시간",
+      "suffix": "초",
+      "placeholder": "0"
+     },
+     "switch-clock-rotation": {
+      "type": "switch",
+      "label": "시계 분침 회전"
+     }
+    }
+   }
+  }
+ },
+ {
+  "code": "cw20260527cd49daa265b10",
+  "title": "캡슐 메뉴",
+  "variables": {
+   "아이템": {
+    "opened": true,
+    "children": {
+     "items": {
+      "type": "item",
+      "label": "메뉴 아이템",
+      "fields": {
+       "image": {
+        "type": "image",
+        "label": "이미지"
+       },
+       "name": {
+        "type": "textfield",
+        "label": "메뉴 이름",
+        "placeholder": "메뉴 이름을 입력해 주세요"
+       },
+       "image-bg": {
+        "type": "color",
+        "label": "이미지 배경 컬러"
+       },
+       "link": {
+        "type": "textfield",
+        "label": "링크",
+        "placeholder": "https://"
+       },
+       "new-window": {
+        "type": "switch",
+        "label": "새창으로 이동"
+       }
+      },
+      "default": [
+       {
+        "image": "",
+        "name": "",
+        "image-bg": "",
+        "link": "",
+        "new-window": false
+       },
+       {
+        "image": "",
+        "name": "",
+        "image-bg": "",
+        "link": "",
+        "new-window": false
+       },
+       {
+        "image": "",
+        "name": "",
+        "image-bg": "",
+        "link": "",
+        "new-window": false
+       }
+      ]
+     }
+    }
+   },
+   "이미지": {
+    "opened": false,
+    "children": {
+     "image-size": {
+      "type": "textfield",
+      "label": "이미지 크기",
+      "suffix": "px"
+     },
+     "image-radius": {
+      "type": "textfield",
+      "label": "모서리 둥글기",
+      "suffix": "px"
+     }
+    }
+   },
+   "텍스트": {
+    "opened": false,
+    "children": {
+     "name-size": {
+      "type": "textfield",
+      "label": "메뉴 이름 크기",
+      "suffix": "px"
+     },
+     "name-color": {
+      "type": "color",
+      "label": "메뉴 이름 컬러"
+     }
+    }
+   },
+   "배경": {
+    "opened": false,
+    "children": {
+     "menu-bg": {
+      "type": "color",
+      "label": "메뉴 배경 컬러"
+     },
+     "menu-border-color": {
+      "type": "color",
+      "label": "테두리 컬러"
+     },
+     "menu-border-width": {
+      "type": "textfield",
+      "label": "테두리 두께",
+      "suffix": "px"
+     },
+     "menu-radius": {
+      "type": "textfield",
+      "label": "모서리 둥글기",
+      "suffix": "px"
+     }
+    }
+   },
+   "레이아웃": {
+    "opened": false,
+    "children": {
+     "gap-image-name": {
+      "type": "textfield",
+      "label": "이미지·메뉴 이름 간격",
+      "suffix": "px"
+     },
+     "padding-top": {
+      "type": "textfield",
+      "label": "상 여백",
+      "suffix": "px"
+     },
+     "padding-bottom": {
+      "type": "textfield",
+      "label": "하 여백",
+      "suffix": "px"
+     },
+     "padding-left": {
+      "type": "textfield",
+      "label": "좌 여백",
+      "suffix": "px"
+     },
+     "padding-right": {
+      "type": "textfield",
+      "label": "우 여백",
+      "suffix": "px"
+     },
+     "gap-menu": {
+      "type": "textfield",
+      "label": "메뉴 간 간격",
+      "suffix": "px"
+     },
+     "segment-align": {
+      "type": "segment",
+      "label": "정렬",
+      "values": [
+       "left",
+       "center",
+       "right"
+      ],
+      "valueNames": [
+       "왼쪽",
+       "가운데",
+       "오른쪽"
+      ]
+     },
+     "mobile-two-rows": {
+      "type": "switch",
+      "label": "모바일에서 2줄로 표시"
+     }
+    }
+   },
+   "효과": {
+    "opened": false,
+    "children": {
+     "shadow": {
+      "type": "switch",
+      "label": "메뉴 그림자"
+     }
+    }
+   },
+   "등장 애니메이션": {
+    "opened": false,
+    "children": {
+     "anim-style": {
+      "type": "select",
+      "label": "스타일",
+      "values": [
+       "none",
+       "fade",
+       "slide-up",
+       "slide-down",
+       "slide-left",
+       "slide-right",
+       "zoom-in"
+      ],
+      "valueNames": [
+       "없음",
+       "페이드",
+       "슬라이드인-업",
+       "슬라이드인-다운",
+       "슬라이드인-왼쪽",
+       "슬라이드인-오른쪽",
+       "줌-인"
+      ]
+     },
+     "anim-duration": {
+      "type": "textfield",
+      "label": "지속 시간",
+      "suffix": "초"
+     },
+     "anim-delay": {
+      "type": "textfield",
+      "label": "지연 시간",
+      "suffix": "초"
+     }
+    }
+   }
+  }
+ },
+ {
+  "code": "cw202606081cd7718789b44",
+  "title": "이미지·텍스트 좌우 분할",
+  "variables": {
+   "아이템": {
+    "opened": false,
+    "children": {
+     "item-banners": {
+      "type": "item",
+      "label": "아이템",
+      "fields": {
+       "text-caption": {
+        "type": "textfield",
+        "label": "캡션",
+        "placeholder": "문구 입력"
+       },
+       "editor-title": {
+        "type": "text-editor",
+        "label": "텍스트 1"
+       },
+       "editor-desc": {
+        "type": "text-editor",
+        "label": "텍스트 2"
+       },
+       "text-button": {
+        "type": "textfield",
+        "label": "버튼 문구",
+        "placeholder": "문구 미입력 시 버튼 미노출"
+       },
+       "text-link": {
+        "type": "textfield",
+        "label": "링크",
+        "placeholder": "https://"
+       },
+       "switch-newtab": {
+        "type": "switch",
+        "label": "새창으로 이동"
+       },
+       "image-content": {
+        "type": "image",
+        "label": "콘텐츠 이미지"
+       },
+       "segment-imgpos": {
+        "type": "segment",
+        "label": "이미지 위치",
+        "values": [
+         "left",
+         "right"
+        ],
+        "valueNames": [
+         "왼쪽",
+         "오른쪽"
+        ]
+       },
+       "color-bg": {
+        "type": "color",
+        "label": "배경 컬러"
+       }
+      },
+      "default": [
+       {
+        "text-caption": "",
+        "editor-title": "",
+        "editor-desc": "",
+        "text-button": "",
+        "text-link": "",
+        "switch-newtab": false,
+        "image-content": "",
+        "segment-imgpos": "",
+        "color-bg": ""
+       },
+       {
+        "text-caption": "",
+        "editor-title": "",
+        "editor-desc": "",
+        "text-button": "",
+        "text-link": "",
+        "switch-newtab": false,
+        "image-content": "",
+        "segment-imgpos": "",
+        "color-bg": ""
+       },
+       {
+        "text-caption": "",
+        "editor-title": "",
+        "editor-desc": "",
+        "text-button": "",
+        "text-link": "",
+        "switch-newtab": false,
+        "image-content": "",
+        "segment-imgpos": "",
+        "color-bg": ""
+       }
+      ]
+     }
+    }
+   },
+   "텍스트": {
+    "opened": false,
+    "children": {
+     "text-caption-size": {
+      "type": "textfield",
+      "label": "캡션 크기",
+      "suffix": "px"
+     },
+     "color-caption": {
+      "type": "color",
+      "label": "캡션 컬러"
+     },
+     "text-title-size": {
+      "type": "textfield",
+      "label": "텍스트 1 크기",
+      "suffix": "px"
+     },
+     "color-title": {
+      "type": "color",
+      "label": "텍스트 1 컬러"
+     },
+     "text-desc-size": {
+      "type": "textfield",
+      "label": "텍스트 2 크기",
+      "suffix": "px"
+     },
+     "color-desc": {
+      "type": "color",
+      "label": "텍스트 2 컬러"
+     }
+    }
+   },
+   "버튼": {
+    "opened": false,
+    "children": {
+     "text-btn-size": {
+      "type": "textfield",
+      "label": "버튼 텍스트 크기",
+      "suffix": "px"
+     },
+     "color-btn-text": {
+      "type": "color",
+      "label": "버튼 텍스트 컬러"
+     },
+     "color-btn-bg": {
+      "type": "color",
+      "label": "버튼 배경 컬러"
+     },
+     "color-btn-border": {
+      "type": "color",
+      "label": "버튼 테두리 컬러"
+     },
+     "text-btn-borderwidth": {
+      "type": "textfield",
+      "label": "버튼 선 두께",
+      "suffix": "px"
+     },
+     "text-btn-radius": {
+      "type": "textfield",
+      "label": "버튼 모서리 둥글기",
+      "suffix": "px"
+     },
+     "text-btn-pady": {
+      "type": "textfield",
+      "label": "버튼 내부 상하 여백",
+      "suffix": "px"
+     },
+     "text-btn-padx": {
+      "type": "textfield",
+      "label": "버튼 내부 좌우 여백",
+      "suffix": "px"
+     }
+    }
+   },
+   "이미지": {
+    "opened": false,
+    "children": {
+     "text-img-size": {
+      "type": "textfield",
+      "label": "이미지 크기",
+      "suffix": "px"
+     },
+     "select-ratio": {
+      "type": "select",
+      "label": "이미지 비율",
+      "values": [
+       "1-1",
+       "2-3",
+       "3-2",
+       "3-4",
+       "4-3",
+       "9-16",
+       "16-9"
+      ],
+      "valueNames": [
+       "1:1",
+       "2:3",
+       "3:2",
+       "3:4",
+       "4:3",
+       "9:16",
+       "16:9"
+      ]
+     }
+    }
+   },
+   "콘텐츠 레이아웃": {
+    "opened": false,
+    "children": {
+     "text-gap-captiontext": {
+      "type": "textfield",
+      "label": "캡션·텍스트 간격",
+      "suffix": "px"
+     },
+     "text-gap-texts": {
+      "type": "textfield",
+      "label": "텍스트 간 간격",
+      "suffix": "px"
+     },
+     "text-gap-textbtn": {
+      "type": "textfield",
+      "label": "텍스트·버튼 간격",
+      "suffix": "px"
+     }
+    }
+   },
+   "섹션 레이아웃": {
+    "opened": false,
+    "children": {
+     "text-pc-maxwidth": {
+      "type": "textfield",
+      "label": "PC 콘텐츠 최대 너비",
+      "suffix": "px"
+     },
+     "text-pad-y": {
+      "type": "textfield",
+      "label": "상하 여백",
+      "suffix": "px"
+     }
+    }
+   },
+   "애니메이션": {
+    "opened": false,
+    "children": {
+     "select-anim": {
+      "type": "select",
+      "label": "스타일",
+      "values": [
+       "none",
+       "fade",
+       "slide-up",
+       "slide-down",
+       "slide-left",
+       "slide-right",
+       "zoom-in"
+      ],
+      "valueNames": [
+       "없음",
+       "페이드",
+       "슬라이드인-업",
+       "슬라이드인-다운",
+       "슬라이드인-왼쪽",
+       "슬라이드인-오른쪽",
+       "줌-인"
+      ]
+     },
+     "text-animduration": {
+      "type": "textfield",
+      "label": "지속 시간",
+      "suffix": "초",
+      "placeholder": "0.7"
+     },
+     "text-animdelay": {
+      "type": "textfield",
+      "label": "지연 시간",
+      "suffix": "초",
+      "placeholder": "0"
+     }
+    }
+   }
+  }
+ },
+ {
+  "code": "cw202606087280f6c952356",
+  "title": "이미지 블록",
+  "variables": {
+   "아이템": {
+    "opened": false,
+    "children": {
+     "item-cards": {
+      "type": "item",
+      "label": "이미지 블록",
+      "fields": {
+       "image-thumb": {
+        "type": "image",
+        "label": "이미지"
+       },
+       "editor-title": {
+        "type": "text-editor",
+        "label": "제목"
+       },
+       "editor-sub": {
+        "type": "text-editor",
+        "label": "서브 텍스트"
+       },
+       "text-link": {
+        "type": "textfield",
+        "label": "링크 URL",
+        "placeholder": "https://"
+       },
+       "switch-newtab": {
+        "type": "switch",
+        "label": "새창으로 열기"
+       }
+      },
+      "maxLength": 5,
+      "default": [
+       {
+        "image-thumb": "",
+        "editor-title": "",
+        "editor-sub": "",
+        "text-link": "",
+        "switch-newtab": false
+       },
+       {
+        "image-thumb": "",
+        "editor-title": "",
+        "editor-sub": "",
+        "text-link": "",
+        "switch-newtab": false
+       },
+       {
+        "image-thumb": "",
+        "editor-title": "",
+        "editor-sub": "",
+        "text-link": "",
+        "switch-newtab": false
+       }
+      ]
+     }
+    }
+   },
+   "텍스트": {
+    "opened": false,
+    "children": {
+     "text-title-size": {
+      "type": "textfield",
+      "label": "제목 크기",
+      "suffix": "px",
+      "placeholder": "24"
+     },
+     "color-title": {
+      "type": "color",
+      "label": "제목 색상"
+     },
+     "text-sub-size": {
+      "type": "textfield",
+      "label": "서브 텍스트 크기",
+      "suffix": "px",
+      "placeholder": "20"
+     },
+     "color-sub": {
+      "type": "color",
+      "label": "서브 텍스트 색상"
+     }
+    }
+   },
+   "레이아웃": {
+    "opened": false,
+    "children": {
+     "select-textpos": {
+      "type": "select",
+      "label": "텍스트 위치",
+      "values": [
+       "tl",
+       "tc",
+       "tr",
+       "ml",
+       "mc",
+       "mr",
+       "bl",
+       "bc",
+       "br"
+      ],
+      "valueNames": [
+       "좌측 상단",
+       "중앙 상단",
+       "우측 상단",
+       "좌측 중앙",
+       "정중앙",
+       "우측 중앙",
+       "좌측 하단",
+       "중앙 하단",
+       "우측 하단"
+      ]
+     },
+     "select-ratio": {
+      "type": "select",
+      "label": "비율",
+      "values": [
+       "square",
+       "wide",
+       "r32",
+       "r43",
+       "r169"
+      ],
+      "valueNames": [
+       "1:1",
+       "2.5:1",
+       "3:2",
+       "4:3",
+       "16:9"
+      ]
+     },
+     "text-gap": {
+      "type": "textfield",
+      "label": "카드 간격",
+      "suffix": "px",
+      "placeholder": "0"
+     },
+     "text-radius": {
+      "type": "textfield",
+      "label": "모서리 둥글기",
+      "suffix": "px",
+      "placeholder": "0"
+     }
+    }
+   },
+   "효과": {
+    "opened": false,
+    "children": {
+     "switch-hoveronly": {
+      "type": "switch",
+      "label": "호버 시 텍스트 노출"
+     },
+     "color-dim": {
+      "type": "color",
+      "label": "음영"
+     }
+    }
+   },
+   "등장 애니메이션": {
+    "opened": false,
+    "children": {
+     "select-anim": {
+      "type": "select",
+      "label": "스타일",
+      "values": [
+       "none",
+       "fade",
+       "slide-up",
+       "slide-down",
+       "slide-left",
+       "slide-right",
+       "zoom-in"
+      ],
+      "valueNames": [
+       "없음",
+       "페이드",
+       "슬라이드-업",
+       "슬라이드-다운",
+       "슬라이드-왼쪽",
+       "슬라이드-오른쪽",
+       "줌-인"
+      ]
+     },
+     "text-animduration": {
+      "type": "textfield",
+      "label": "지속 시간",
+      "suffix": "초",
+      "placeholder": "0.7"
+     },
+     "text-animdelay": {
+      "type": "textfield",
+      "label": "지연 시간",
+      "suffix": "초",
+      "placeholder": "0"
+     }
+    }
+   }
+  }
+ },
+ {
+  "code": "cw202606097ea8f341b8d8d",
+  "title": "꽉 찬 동영상 슬라이드",
+  "variables": {
+   "아이템": {
+    "opened": false,
+    "children": {
+     "item-slides": {
+      "type": "item",
+      "label": "롤링 아이템",
+      "fields": {
+       "text-video-url-pc": {
+        "type": "textfield",
+        "label": "PC 동영상 링크",
+        "placeholder": "https://"
+       },
+       "text-video-url-mo": {
+        "type": "textfield",
+        "label": "모바일 동영상 링크",
+        "placeholder": "https://"
+       },
+       "editor-subtext": {
+        "type": "text-editor",
+        "label": "텍스트 1"
+       },
+       "editor-title": {
+        "type": "text-editor",
+        "label": "텍스트 2"
+       },
+       "text-btn": {
+        "type": "textfield",
+        "label": "버튼 텍스트",
+        "placeholder": "버튼 문구 입력"
+       },
+       "text-link": {
+        "type": "textfield",
+        "label": "링크",
+        "placeholder": "https://"
+       },
+       "switch-new-tab": {
+        "type": "switch",
+        "label": "새창으로 이동"
+       },
+       "date-start": {
+        "type": "date",
+        "label": "노출 시작일"
+       },
+       "time-start": {
+        "type": "time",
+        "label": "노출 시작 시간"
+       },
+       "date-end": {
+        "type": "date",
+        "label": "노출 종료일"
+       },
+       "time-end": {
+        "type": "time",
+        "label": "노출 종료 시간"
+       }
+      },
+      "default": [
+       {
+        "text-video-url-pc": "",
+        "text-video-url-mo": "",
+        "editor-subtext": "",
+        "editor-title": "",
+        "text-btn": "",
+        "text-link": "",
+        "switch-new-tab": false,
+        "date-start": "",
+        "time-start": "",
+        "date-end": "",
+        "time-end": ""
+       },
+       {
+        "text-video-url-pc": "",
+        "text-video-url-mo": "",
+        "editor-subtext": "",
+        "editor-title": "",
+        "text-btn": "",
+        "text-link": "",
+        "switch-new-tab": false,
+        "date-start": "",
+        "time-start": "",
+        "date-end": "",
+        "time-end": ""
+       },
+       {
+        "text-video-url-pc": "",
+        "text-video-url-mo": "",
+        "editor-subtext": "",
+        "editor-title": "",
+        "text-btn": "",
+        "text-link": "",
+        "switch-new-tab": false,
+        "date-start": "",
+        "time-start": "",
+        "date-end": "",
+        "time-end": ""
+       }
+      ]
+     }
+    }
+   },
+   "텍스트": {
+    "opened": false,
+    "children": {
+     "text-subtext-size": {
+      "type": "textfield",
+      "label": "텍스트 1 크기",
+      "suffix": "px"
+     },
+     "color-subtext": {
+      "type": "color",
+      "label": "텍스트 1 컬러"
+     },
+     "text-title-size": {
+      "type": "textfield",
+      "label": "텍스트 2 크기",
+      "suffix": "px"
+     },
+     "color-title": {
+      "type": "color",
+      "label": "텍스트 2 컬러"
+     }
+    }
+   },
+   "버튼": {
+    "opened": false,
+    "children": {
+     "text-btn-size": {
+      "type": "textfield",
+      "label": "텍스트 크기",
+      "suffix": "px"
+     },
+     "color-btn-text": {
+      "type": "color",
+      "label": "텍스트 컬러"
+     },
+     "color-btn-bg": {
+      "type": "color",
+      "label": "배경 컬러"
+     },
+     "color-btn-border": {
+      "type": "color",
+      "label": "테두리 컬러"
+     },
+     "text-btn-border-width": {
+      "type": "textfield",
+      "label": "테두리 두께",
+      "suffix": "px"
+     },
+     "text-btn-py": {
+      "type": "textfield",
+      "label": "내부 상하 여백",
+      "suffix": "px"
+     },
+     "text-btn-px": {
+      "type": "textfield",
+      "label": "내부 좌우 여백",
+      "suffix": "px"
+     },
+     "text-btn-radius": {
+      "type": "textfield",
+      "label": "모서리 둥글기",
+      "suffix": "px"
+     }
+    }
+   },
+   "콘텐츠 레이아웃": {
+    "opened": false,
+    "children": {
+     "select-pc-position": {
+      "type": "select",
+      "label": "PC 콘텐츠 위치",
+      "values": [
+       "left-top",
+       "left-center",
+       "left-bottom",
+       "center-top",
+       "center-center",
+       "center-bottom",
+       "right-top",
+       "right-center",
+       "right-bottom"
+      ],
+      "valueNames": [
+       "왼쪽 상단",
+       "왼쪽 중앙",
+       "왼쪽 하단",
+       "중앙 상단",
+       "정 중앙",
+       "중앙 하단",
+       "오른쪽 상단",
+       "오른쪽 중앙",
+       "오른쪽 하단"
+      ]
+     },
+     "select-mobile-position": {
+      "type": "select",
+      "label": "모바일 콘텐츠 위치",
+      "values": [
+       "left-top",
+       "left-center",
+       "left-bottom",
+       "center-top",
+       "center-center",
+       "center-bottom",
+       "right-top",
+       "right-center",
+       "right-bottom"
+      ],
+      "valueNames": [
+       "왼쪽 상단",
+       "왼쪽 중앙",
+       "왼쪽 하단",
+       "중앙 상단",
+       "정 중앙",
+       "중앙 하단",
+       "오른쪽 상단",
+       "오른쪽 중앙",
+       "오른쪽 하단"
+      ]
+     },
+     "text-subtext-mb": {
+      "type": "textfield",
+      "label": "텍스트 사이 간격",
+      "suffix": "px"
+     },
+     "text-title-mb": {
+      "type": "textfield",
+      "label": "텍스트·버튼 사이 간격",
+      "suffix": "px"
+     }
+    }
+   },
+   "슬라이드 레이아웃": {
+    "opened": false,
+    "children": {
+     "text-pc-max-height": {
+      "type": "textfield",
+      "label": "PC 최대 높이",
+      "suffix": "px"
+     },
+     "text-mobile-max-height": {
+      "type": "textfield",
+      "label": "모바일 최대 높이",
+      "suffix": "px"
+     },
+     "text-max-content": {
+      "type": "textfield",
+      "label": "콘텐츠 최대 너비",
+      "suffix": "px"
+     },
+     "text-content-top": {
+      "type": "textfield",
+      "label": "내부 상하 여백",
+      "suffix": "px"
+     },
+     "color-pagination": {
+      "type": "color",
+      "label": "페이지네이션 컬러"
+     },
+     "switch-pagination": {
+      "type": "switch",
+      "label": "페이지네이션 표시"
+     }
+    }
+   },
+   "슬라이드 좌우 버튼": {
+    "opened": false,
+    "children": {
+     "segment-arrow-style": {
+      "type": "segment",
+      "label": "화살표 형태",
+      "values": [
+       "line",
+       "angle"
+      ],
+      "valueNames": [
+       "→",
+       ">"
+      ]
+     },
+     "color-arrow": {
+      "type": "color",
+      "label": "화살표 컬러"
+     },
+     "switch-arrows": {
+      "type": "switch",
+      "label": "좌우 버튼 표시"
+     }
+    }
+   },
+   "슬라이드 애니메이션": {
+    "opened": false,
+    "children": {
+     "text-duration": {
+      "type": "textfield",
+      "label": "자동 전환 간격",
+      "suffix": "초"
+     },
+     "switch-autoplay": {
+      "type": "switch",
+      "label": "자동 전환"
+     },
+     "text-transition-speed": {
+      "type": "textfield",
+      "label": "전환 속도",
+      "suffix": "초"
+     }
+    }
+   },
+   "등장 애니메이션": {
+    "opened": false,
+    "children": {
+     "select-anim": {
+      "type": "select",
+      "label": "스타일",
+      "values": [
+       "none",
+       "fade",
+       "slide-up",
+       "slide-down",
+       "slide-left",
+       "slide-right",
+       "zoom-in"
+      ],
+      "valueNames": [
+       "없음",
+       "페이드",
+       "슬라이드인-업",
+       "슬라이드인-다운",
+       "슬라이드인-왼쪽",
+       "슬라이드인-오른쪽",
+       "줌-인"
+      ]
+     },
+     "text-animduration": {
+      "type": "textfield",
+      "label": "지속 시간",
+      "suffix": "초",
+      "placeholder": "0.7"
+     },
+     "text-animdelay": {
+      "type": "textfield",
+      "label": "지연 시간",
+      "suffix": "초",
+      "placeholder": "0"
+     }
+    }
+   }
+  }
+ },
+ {
+  "code": "cw2026060999d84532b6bea",
+  "title": "다중 동영상 슬라이드",
+  "variables": {
+   "아이템": {
+    "opened": false,
+    "children": {
+     "item-slides": {
+      "type": "item",
+      "label": "슬라이드",
+      "fields": {
+       "text-video-url": {
+        "type": "textfield",
+        "label": "동영상 링크",
+        "placeholder": "https://"
+       },
+       "image-slide": {
+        "type": "image",
+        "label": "동영상 커버 이미지"
+       },
+       "editor-title": {
+        "type": "text-editor",
+        "label": "타이틀"
+       },
+       "editor-subtitle": {
+        "type": "text-editor",
+        "label": "서브텍스트"
+       },
+       "color-item-overlay": {
+        "type": "color",
+        "label": "음영 색상"
+       },
+       "text-link": {
+        "type": "textfield",
+        "label": "링크",
+        "placeholder": "https://"
+       },
+       "switch-newtab": {
+        "type": "switch",
+        "label": "새 창으로 열기"
+       },
+       "date-start": {
+        "type": "date",
+        "label": "시작 날짜"
+       },
+       "time-start": {
+        "type": "time",
+        "label": "시작 시간"
+       },
+       "date-end": {
+        "type": "date",
+        "label": "종료 날짜"
+       },
+       "time-end": {
+        "type": "time",
+        "label": "종료 시간"
+       }
+      },
+      "default": [
+       {
+        "text-video-url": "",
+        "image-slide": "",
+        "editor-title": "",
+        "editor-subtitle": "",
+        "color-item-overlay": "",
+        "text-link": "",
+        "switch-newtab": false,
+        "date-start": "",
+        "time-start": "",
+        "date-end": "",
+        "time-end": ""
+       },
+       {
+        "text-video-url": "",
+        "image-slide": "",
+        "editor-title": "",
+        "editor-subtitle": "",
+        "color-item-overlay": "",
+        "text-link": "",
+        "switch-newtab": false,
+        "date-start": "",
+        "time-start": "",
+        "date-end": "",
+        "time-end": ""
+       },
+       {
+        "text-video-url": "",
+        "image-slide": "",
+        "editor-title": "",
+        "editor-subtitle": "",
+        "color-item-overlay": "",
+        "text-link": "",
+        "switch-newtab": false,
+        "date-start": "",
+        "time-start": "",
+        "date-end": "",
+        "time-end": ""
+       }
+      ]
+     }
+    }
+   },
+   "텍스트": {
+    "opened": false,
+    "children": {
+     "text-title-size": {
+      "type": "textfield",
+      "label": "타이틀 크기",
+      "suffix": "px"
+     },
+     "color-title": {
+      "type": "color",
+      "label": "타이틀 색상"
+     },
+     "text-subtitle-size": {
+      "type": "textfield",
+      "label": "서브텍스트 크기",
+      "suffix": "px"
+     },
+     "color-subtitle": {
+      "type": "color",
+      "label": "서브텍스트 색상"
+     }
+    }
+   },
+   "콘텐츠 레이아웃": {
+    "opened": false,
+    "children": {
+     "select-content-position": {
+      "type": "select",
+      "label": "텍스트 위치",
+      "values": [
+       "top-left",
+       "top-center",
+       "top-right",
+       "mid-left",
+       "mid-center",
+       "mid-right",
+       "bot-left",
+       "bot-center",
+       "bot-right"
+      ],
+      "valueNames": [
+       "왼쪽 상단",
+       "중앙 상단",
+       "오른쪽 상단",
+       "왼쪽 중앙",
+       "정 중앙",
+       "오른쪽 중앙",
+       "왼쪽 하단",
+       "중앙 하단",
+       "오른쪽 하단"
+      ]
+     },
+     "text-title-subtitle-gap": {
+      "type": "textfield",
+      "label": "텍스트 사이 간격",
+      "suffix": "px"
+     }
+    }
+   },
+   "카드 레이아웃": {
+    "opened": false,
+    "children": {
+     "select-card-ratio": {
+      "type": "select",
+      "label": "카드 비율",
+      "values": [
+       "1.0",
+       "1.25",
+       "1.34",
+       "1.5",
+       "1.78",
+       "2.0"
+      ],
+      "valueNames": [
+       "1:1",
+       "4:5",
+       "3:4",
+       "2:3",
+       "9:16",
+       "1:2"
+      ]
+     },
+     "text-card-width": {
+      "type": "textfield",
+      "label": "카드 너비",
+      "suffix": "px"
+     },
+     "text-padding-v": {
+      "type": "textfield",
+      "label": "내부 상하 여백",
+      "suffix": "px"
+     },
+     "text-padding-h": {
+      "type": "textfield",
+      "label": "내부 좌우 여백",
+      "suffix": "px"
+     },
+     "text-outer-margin-v": {
+      "type": "textfield",
+      "label": "외부 상하 여백",
+      "suffix": "px"
+     },
+     "text-gap": {
+      "type": "textfield",
+      "label": "카드 간 간격",
+      "suffix": "px"
+     },
+     "text-border-radius": {
+      "type": "textfield",
+      "label": "모서리 둥글기",
+      "suffix": "px"
+     }
+    }
+   },
+   "좌우 버튼": {
+    "opened": false,
+    "children": {
+     "segment-arrow-style": {
+      "type": "segment",
+      "label": "화살표 스타일",
+      "values": [
+       "chevron",
+       "arrow"
+      ],
+      "valueNames": [
+       ">",
+       "→"
+      ]
+     },
+     "color-arrow": {
+      "type": "color",
+      "label": "화살표 색상"
+     },
+     "color-arrow-bg": {
+      "type": "color",
+      "label": "버튼 배경 색상"
+     }
+    }
+   },
+   "슬라이드 애니메이션": {
+    "opened": false,
+    "children": {
+     "text-autoplay-speed": {
+      "type": "textfield",
+      "label": "자동재생 속도",
+      "suffix": "ms"
+     },
+     "switch-autoplay": {
+      "type": "switch",
+      "label": "자동 재생"
+     },
+     "switch-center-scale": {
+      "type": "switch",
+      "label": "중앙 이미지 확대"
+     },
+     "switch-hover-scale": {
+      "type": "switch",
+      "label": "마우스 오버 이미지 확대"
+     }
+    }
+   },
+   "등장 애니메이션": {
+    "opened": false,
+    "children": {
+     "select-anim": {
+      "type": "select",
+      "label": "스타일",
+      "values": [
+       "none",
+       "fade",
+       "slide-up",
+       "slide-down",
+       "slide-left",
+       "slide-right",
+       "zoom-in"
+      ],
+      "valueNames": [
+       "없음",
+       "페이드",
+       "슬라이드인-업",
+       "슬라이드인-다운",
+       "슬라이드인-왼쪽",
+       "슬라이드인-오른쪽",
+       "줌-인"
+      ]
+     },
+     "text-animduration": {
+      "type": "textfield",
+      "label": "지속 시간",
+      "suffix": "초",
+      "placeholder": "0.7"
+     },
+     "text-animdelay": {
+      "type": "textfield",
+      "label": "지연 시간",
+      "suffix": "초",
+      "placeholder": "0"
+     }
+    }
+   }
+  }
+ },
+ {
+  "code": "cw2026061059137efdba55f",
+  "title": "분할 슬라이드",
+  "variables": {
+   "좌측 배너": {
+    "opened": false,
+    "children": {
+     "editor-promo-title": {
+      "type": "text-editor",
+      "label": "좌측 타이틀"
+     },
+     "text-promo-title-size": {
+      "type": "textfield",
+      "label": "좌측 타이틀 크기",
+      "suffix": "px"
+     },
+     "color-promo-title": {
+      "type": "color",
+      "label": "좌측 타이틀 컬러"
+     },
+     "editor-promo-desc": {
+      "type": "text-editor",
+      "label": "좌측 설명"
+     },
+     "text-promo-desc-size": {
+      "type": "textfield",
+      "label": "좌측 설명 크기",
+      "suffix": "px"
+     },
+     "color-promo-desc": {
+      "type": "color",
+      "label": "좌측 설명 컬러"
+     },
+     "image-bg": {
+      "type": "image",
+      "label": "좌측 배경 이미지"
+     },
+     "color-overlay": {
+      "type": "color",
+      "label": "좌측 오버레이 컬러"
+     },
+     "select-promo-pos-pc": {
+      "type": "select",
+      "label": "좌측 텍스트 PC 위치",
+      "values": [
+       "top-left",
+       "top-center",
+       "top-right",
+       "center-left",
+       "center-center",
+       "center-right",
+       "bottom-left",
+       "bottom-center",
+       "bottom-right"
+      ],
+      "valueNames": [
+       "좌측 상단",
+       "중앙 상단",
+       "우측 상단",
+       "좌측 중앙",
+       "정중앙",
+       "우측 중앙",
+       "좌측 하단",
+       "중앙 하단",
+       "우측 하단"
+      ]
+     },
+     "segment-promo-pos-mobile": {
+      "type": "select",
+      "label": "좌측 텍스트 모바일 위치",
+      "values": [
+       "left",
+       "center",
+       "right"
+      ],
+      "valueNames": [
+       "왼쪽",
+       "가운데",
+       "오른쪽"
+      ]
+     }
+    }
+   },
+   "우측 슬라이드": {
+    "opened": true,
+    "children": {
+     "item-slides": {
+      "type": "item",
+      "label": "슬라이드",
+      "fields": {
+       "text-category": {
+        "type": "textfield",
+        "label": "캡션",
+        "placeholder": "캡션"
+       },
+       "editor-title": {
+        "type": "text-editor",
+        "label": "텍스트 1"
+       },
+       "image-product": {
+        "type": "image",
+        "label": "이미지"
+       },
+       "editor-desc": {
+        "type": "text-editor",
+        "label": "텍스트 2"
+       },
+       "text-link": {
+        "type": "textfield",
+        "label": "링크",
+        "placeholder": "https://"
+       },
+       "switch-newtab": {
+        "type": "switch",
+        "label": "새 탭으로 링크 열기"
+       }
+      },
+      "default": [
+       {
+        "text-category": "",
+        "editor-title": "",
+        "image-product": "",
+        "editor-desc": "",
+        "text-link": "",
+        "switch-newtab": false
+       },
+       {
+        "text-category": "",
+        "editor-title": "",
+        "image-product": "",
+        "editor-desc": "",
+        "text-link": "",
+        "switch-newtab": false
+       },
+       {
+        "text-category": "",
+        "editor-title": "",
+        "image-product": "",
+        "editor-desc": "",
+        "text-link": "",
+        "switch-newtab": false
+       }
+      ]
+     },
+     "text-category-size": {
+      "type": "textfield",
+      "label": "캡션 크기",
+      "suffix": "px"
+     },
+     "color-category": {
+      "type": "color",
+      "label": "캡션 컬러"
+     },
+     "text-title-size": {
+      "type": "textfield",
+      "label": "텍스트 1 크기",
+      "suffix": "px"
+     },
+     "color-title": {
+      "type": "color",
+      "label": "텍스트 1 컬러"
+     },
+     "text-desc-size": {
+      "type": "textfield",
+      "label": "텍스트 2 크기",
+      "suffix": "px"
+     },
+     "color-desc": {
+      "type": "color",
+      "label": "텍스트 2 컬러"
+     },
+     "color-arrow": {
+      "type": "color",
+      "label": "화살표 컬러"
+     },
+     "color-dot-active": {
+      "type": "color",
+      "label": "인디케이터 활성 컬러"
+     },
+     "color-dot": {
+      "type": "color",
+      "label": "인디케이터 컬러"
+     },
+     "color-panel-bg": {
+      "type": "color",
+      "label": "우측 패널 배경 컬러"
+     }
+    }
+   },
+   "슬라이드 애니메이션": {
+    "opened": false,
+    "children": {
+     "text-autoplay-speed": {
+      "type": "textfield",
+      "label": "자동 재생 속도",
+      "suffix": "초",
+      "placeholder": "4"
+     },
+     "switch-autoplay": {
+      "type": "switch",
+      "label": "자동 재생"
+     }
+    }
+   },
+   "등장 애니메이션": {
+    "opened": false,
+    "children": {
+     "select-anim": {
+      "type": "select",
+      "label": "스타일",
+      "values": [
+       "none",
+       "fade",
+       "slide-up",
+       "slide-down",
+       "slide-left",
+       "slide-right",
+       "zoom-in"
+      ],
+      "valueNames": [
+       "없음",
+       "페이드",
+       "슬라이드인-업",
+       "슬라이드인-다운",
+       "슬라이드인-왼쪽",
+       "슬라이드인-오른쪽",
+       "줌-인"
+      ]
+     },
+     "text-animduration": {
+      "type": "textfield",
+      "label": "지속 시간",
+      "suffix": "초",
+      "placeholder": "0.7"
+     },
+     "text-animdelay": {
+      "type": "textfield",
+      "label": "지연 시간",
+      "suffix": "초",
+      "placeholder": "0"
+     }
+    }
+   }
+  }
+ }
+]

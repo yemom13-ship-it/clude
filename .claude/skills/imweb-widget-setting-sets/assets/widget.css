@@ -1,0 +1,116 @@
+/* 슬라이드 레이아웃 + 좌우 버튼 (설정 세트 2) */
+:where(*, *::before, *::after) { box-sizing: border-box; margin: 0; padding: 0; }
+
+.iw-wrap {
+  --arrow-size: {{text-arrowsize}}px;   /* 숫자 변수는 루트에서 단위 concat */
+  --arrow-color: {{color-arrow}};
+  --slide-radius: 8px;
+
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.iw-track { display: flex; will-change: transform; }
+
+.iw-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  position: relative;
+  border-radius: var(--slide-radius);
+  overflow: hidden;
+}
+.iw-slide__img { width: 100%; height: auto; display: block; object-fit: cover; }
+.iw-slide__body { padding: 16px; }
+
+/* 드래그 중에는 이미지 고스트·텍스트 선택을 막는다 */
+.iw-wrap[data-dragging] { cursor: grabbing; user-select: none; }
+.iw-wrap[data-dragging] .iw-slide__img { pointer-events: none; }
+
+/* 좌우 버튼 */
+.iw-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: var(--arrow-size);
+  height: var(--arrow-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: var(--arrow-color);
+  font-size: calc(var(--arrow-size) * 0.5);
+  line-height: 1;
+  cursor: pointer;
+}
+.iw-nav--prev { left: 8px; }
+.iw-nav--next { right: 8px; }
+.iw-nav:focus-visible { outline: 2px solid var(--arrow-color); outline-offset: 2px; }
+
+/* 화살표 형태 — 선택된 글리프만 노출 */
+.iw-nav__line,
+.iw-nav__angle { display: none; }
+.iw-wrap[data-arrow="line"] .iw-nav__line   { display: inline; }
+.iw-wrap[data-arrow="angle"] .iw-nav__angle { display: inline; }
+
+/* 도트 */
+.iw-dots {
+  position: absolute;
+  left: 0; right: 0; bottom: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+.iw-dot {
+  width: 8px; height: 8px;
+  border: none; border-radius: 50%;
+  background: var(--arrow-color);
+  opacity: 0.4;
+  cursor: pointer;
+}
+.iw-dot[data-state="active"] { opacity: 1; }
+
+@media (max-width: 768px) {
+  .iw-nav { width: calc(var(--arrow-size) * 0.75); height: calc(var(--arrow-size) * 0.75); }
+  .iw-slide__body { padding: 12px; }
+}
+
+/* 등장 애니메이션 (설정 세트 1) */
+/* 초기 은닉 — "없음"일 때는 숨기지 않는다 */
+.iw-wrap[data-anim="fade"],
+.iw-wrap[data-anim="slide-up"],
+.iw-wrap[data-anim="slide-down"],
+.iw-wrap[data-anim="slide-left"],
+.iw-wrap[data-anim="slide-right"],
+.iw-wrap[data-anim="zoom-in"] {
+  opacity: 0;
+}
+
+/* 발화 상태 — opacity/transform 을 명시 복구해야 '투명하게 갇힘'을 막는다 */
+.iw-wrap[data-state="animated"] {
+  opacity: 1;
+  transform: none;
+  animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+  animation-fill-mode: both;
+  /* animation-duration / animation-delay 는 JS 가 인라인 주입 */
+}
+
+.iw-wrap[data-state="animated"][data-anim="fade"]        { animation-name: iw-fade; }
+.iw-wrap[data-state="animated"][data-anim="slide-up"]    { animation-name: iw-slide-up; }
+.iw-wrap[data-state="animated"][data-anim="slide-down"]  { animation-name: iw-slide-down; }
+.iw-wrap[data-state="animated"][data-anim="slide-left"]  { animation-name: iw-slide-left; }
+.iw-wrap[data-state="animated"][data-anim="slide-right"] { animation-name: iw-slide-right; }
+.iw-wrap[data-state="animated"][data-anim="zoom-in"]     { animation-name: iw-zoom-in; }
+
+@keyframes iw-fade        { from { opacity: 0; }                               to { opacity: 1; transform: none; } }
+@keyframes iw-slide-up    { from { opacity: 0; transform: translateY(24px); }  to { opacity: 1; transform: none; } }
+@keyframes iw-slide-down  { from { opacity: 0; transform: translateY(-24px); } to { opacity: 1; transform: none; } }
+@keyframes iw-slide-left  { from { opacity: 0; transform: translateX(24px); }  to { opacity: 1; transform: none; } }
+@keyframes iw-slide-right { from { opacity: 0; transform: translateX(-24px); } to { opacity: 1; transform: none; } }
+@keyframes iw-zoom-in     { from { opacity: 0; transform: scale(0.94); }       to { opacity: 1; transform: none; } }
+
+/* 모션 최소화 — animation:none 과 opacity:1 은 반드시 세트로 */
+@media (prefers-reduced-motion: reduce) {
+  .iw-wrap[data-state="animated"] { animation: none; opacity: 1; transform: none; }
+}

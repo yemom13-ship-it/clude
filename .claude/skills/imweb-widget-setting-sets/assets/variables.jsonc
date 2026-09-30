@@ -1,0 +1,64 @@
+{
+  // 슬라이드는 아이템에서 추가·수정해요
+  "아이템": {
+    "opened": true,
+    "children": {
+      "item-slides": {
+        "type": "item",
+        "label": "슬라이드 목록",
+        "maxLength": 20,
+        "fields": {
+          "image-slide":   { "type": "image",       "label": "슬라이드 이미지" },
+          "editor-title":  { "type": "text-editor", "label": "텍스트 1" },
+          "editor-desc":   { "type": "text-editor", "label": "텍스트 2" },
+          "text-link":     { "type": "textfield",   "label": "링크", "placeholder": "https://" },
+          "switch-newtab": { "type": "switch",      "label": "새창으로 이동" },
+          "date-start":    { "type": "date",        "label": "시작 날짜" },
+          "time-start":    { "type": "time",        "label": "시작 시간" },
+          "date-end":      { "type": "date",        "label": "종료 날짜" },
+          "time-end":      { "type": "time",        "label": "종료 시간" }
+        },
+        "default": [
+          { "image-slide": "", "editor-title": "**첫 번째 슬라이드**", "editor-desc": "설명을 입력하세요",
+            "text-link": "", "switch-newtab": false,
+            "date-start": "", "time-start": "", "date-end": "", "time-end": "" },
+          { "image-slide": "", "editor-title": "**두 번째 슬라이드**", "editor-desc": "설명을 입력하세요",
+            "text-link": "", "switch-newtab": false,
+            "date-start": "", "time-start": "", "date-end": "", "time-end": "" },
+          { "image-slide": "", "editor-title": "**세 번째 슬라이드**", "editor-desc": "설명을 입력하세요",
+            "text-link": "", "switch-newtab": false,
+            "date-start": "", "time-start": "", "date-end": "", "time-end": "" }
+        ]
+      }
+    }
+  },
+  "슬라이드 좌우 버튼": {
+    "opened": false,
+    "children": {
+      "text-arrowsize": { "type": "textfield", "label": "좌우 버튼 크기", "default": "40", "suffix": "px" },
+      "segment-arrow":  { "type": "segment",   "label": "화살표 형태", "default": "line",
+                          "values": ["line", "angle"], "valueNames": ["→", ">"] },
+      "color-arrow":    { "type": "color",     "label": "화살표 컬러", "default": "#FFFFFF" }
+    }
+  },
+  "슬라이드 애니메이션": {
+    "opened": false,
+    "children": {
+      "text-transition": { "type": "textfield", "label": "전환 속도",      "default": "0.6", "placeholder": "0.6", "suffix": "초" },
+      "switch-autoplay": { "type": "switch",    "label": "자동 재생",      "default": true },
+      "text-autoplay":   { "type": "textfield", "label": "자동 재생 간격", "default": "4",   "placeholder": "4",   "suffix": "초" }
+    }
+  },
+  "등장 애니메이션": {
+    "opened": false,
+    "children": {
+      "select-anim": {
+        "type": "select", "label": "스타일", "default": "none",
+        "values":     ["none", "fade", "slide-up", "slide-down", "slide-left", "slide-right", "zoom-in"],
+        "valueNames": ["없음", "페이드", "슬라이드인-업", "슬라이드인-다운", "슬라이드인-왼쪽", "슬라이드인-오른쪽", "줌-인"]
+      },
+      "text-animduration": { "type": "textfield", "label": "지속 시간", "default": "0.7", "placeholder": "0.7", "suffix": "초" },
+      "text-animdelay":    { "type": "textfield", "label": "지연 시간", "default": "0",   "placeholder": "0",   "suffix": "초" }
+    }
+  },
+}

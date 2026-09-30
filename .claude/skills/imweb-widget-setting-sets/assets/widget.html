@@ -1,0 +1,35 @@
+<section class="iw-wrap" id="iw-wrap"
+  data-anim="{{select-anim}}"
+  data-animduration="{{text-animduration}}"
+  data-animdelay="{{text-animdelay}}"
+  data-transition-speed="{{text-transition}}"
+  data-autoplay="{{switch-autoplay}}"
+  data-autoplay-speed="{{text-autoplay}}"
+  data-arrow="{{segment-arrow}}"
+  aria-label="슬라이드">
+
+  <div class="iw-track" id="iw-track">
+    {{#each item-slides}}
+    <div class="iw-slide"
+      data-date-start="{{date-start}}"
+      data-time-start="{{time-start}}"
+      data-date-end="{{date-end}}"
+      data-time-end="{{time-end}}">
+      <img class="iw-slide__img" src="{{image-slide}}" alt="" />
+      <div class="iw-slide__body">
+        <div class="iw-slide__title editor-content">{{editor-title}}</div>
+        <div class="iw-slide__desc editor-content">{{editor-desc}}</div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+
+  <button class="iw-nav iw-nav--prev" id="iw-prev" type="button" aria-label="이전 슬라이드">
+    <span class="iw-nav__line">←</span><span class="iw-nav__angle">‹</span>
+  </button>
+  <button class="iw-nav iw-nav--next" id="iw-next" type="button" aria-label="다음 슬라이드">
+    <span class="iw-nav__line">→</span><span class="iw-nav__angle">›</span>
+  </button>
+
+  <div class="iw-dots" id="iw-dots"></div>
+</section>
