@@ -1,0 +1,356 @@
+<!--
+  PlaceTab 스크롤 카드 위젯 (아임웹 "코드" 위젯용)
+  - 문구/이미지: 아래 <article> 안의 내용을 바꾸면 됩니다. 카드를 늘리려면 <article> 한 덩어리를 복사해서 붙여넣으세요.
+  - 이미지: src="" 따옴표 안에 이미지 주소를 넣으세요.
+  - 색상/크기: <style> 맨 위 "설정" 부분의 값을 바꾸면 됩니다.
+  - 스크롤 거리/이미지 효과: 바로 아래 <section> 의 data-distance, data-rise 값을 바꾸면 됩니다.
+-->
+<section class="pt-stack" aria-label="서비스 소개" data-distance="700" data-rise="true">
+  <div class="pt-stack__track">
+    <div class="pt-stack__stage">
+      <div class="pt-stack__card">
+
+        <!-- 카드 1 -->
+        <article class="pt-stack__panel">
+          <div class="pt-stack__media">
+            <img class="pt-stack__img" src="" alt="네이버·당근마켓·카카오 채널 운영 일러스트" />
+          </div>
+          <div class="pt-stack__body">
+            <p class="pt-stack__eyebrow">다양한 마케팅 채널 운영</p>
+            <h3 class="pt-stack__title">네이버 &amp; 당근마켓 &amp; 카카오<br /><span class="pt-stack__mark">SA &amp; DA 퍼포먼스 마케팅 대행</span></h3>
+            <p class="pt-stack__desc">플랫폼별 특성에 맞는 전략 설계와<br />다양한 채널 노출 운영으로<br />매출 성장을 체계적으로 지원합니다.</p>
+          </div>
+        </article>
+
+        <!-- 카드 2 -->
+        <article class="pt-stack__panel">
+          <div class="pt-stack__media">
+            <img class="pt-stack__img" src="" alt="5:1 전문 멘토링 시스템 일러스트" />
+          </div>
+          <div class="pt-stack__body">
+            <p class="pt-stack__eyebrow">5:1 전문 멘토링 시스템</p>
+            <h3 class="pt-stack__title">빠른 소통은 <span class="pt-stack__mark">성장의 기본입니다</span></h3>
+            <p class="pt-stack__desc">분야별 전문 마케터의 체계적인 운영으로<br />퍼포먼스,바이럴,콘텐츠,AE,기획까지<br />브랜드 상황에 맞는 전략을 빠르게 설계합니다.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.pt-stack {
+  /* ===== 설정 ===== */
+  --pt-card-bg: #ffffff;        /* 카드 배경 컬러 */
+  --pt-eyebrow: #2f6bf0;        /* 서브 텍스트 컬러 */
+  --pt-title: #1a1a1a;          /* 타이틀 컬러 */
+  --pt-mark: #dce8ff;           /* 타이틀 강조 배경 컬러 */
+  --pt-desc: #444444;           /* 내용 컬러 */
+  --pt-eyebrow-size: 18px;      /* 서브 텍스트 크기 */
+  --pt-title-size: 40px;        /* 타이틀 크기 */
+  --pt-desc-size: 18px;         /* 내용 크기 */
+  --pt-radius: 40px;            /* 모서리 둥글기 */
+  --pt-card-width: 1240px;      /* 카드 최대 너비 */
+  --pt-image-ratio: 4 / 3;      /* 이미지 비율 */
+  /* ================ */
+  --pt-rise-offset: 90px;
+  --pt-prev-shift: 40px;
+  position: relative;
+  width: 100%;
+}
+
+.pt-stack,
+.pt-stack *,
+.pt-stack *::before,
+.pt-stack *::after {
+  box-sizing: border-box;
+}
+
+.pt-stack .pt-stack__track {
+  position: relative;
+  height: var(--pt-track-h, auto);
+}
+
+.pt-stack .pt-stack__stage {
+  position: -webkit-sticky;
+  position: sticky;
+  top: var(--pt-pin-top, 16px);
+  width: 100%;
+  max-width: var(--pt-card-width);
+  margin: 0 auto;
+  will-change: transform;
+}
+
+.pt-stack[data-pin='js'] .pt-stack__stage {
+  position: relative;
+  top: 0;
+}
+
+.pt-stack .pt-stack__card {
+  display: grid;
+  overflow: hidden;
+  border-radius: var(--pt-radius);
+  background: var(--pt-card-bg);
+  box-shadow: 0 24px 60px rgba(15, 30, 60, 0.18);
+}
+
+/* 모든 카드를 같은 칸에 겹쳐 높이 = 가장 긴 카드 */
+.pt-stack .pt-stack__card .pt-stack__panel {
+  grid-area: 1 / 1;
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  margin: 0;
+  padding: 72px 96px;
+  overflow: hidden;
+  background: var(--pt-card-bg);
+  transform: translateY(calc((1 - var(--slide, 1)) * 100% - var(--q, 0) * var(--pt-prev-shift)));
+  opacity: calc(1 - var(--q, 0) * 0.7);
+  will-change: transform, opacity;
+}
+
+.pt-stack .pt-stack__card .pt-stack__panel:nth-child(n + 2) {
+  --slide: 0;
+  box-shadow: 0 -16px 40px rgba(15, 30, 60, 0.08);
+}
+
+.pt-stack .pt-stack__media {
+  flex: 0 0 46%;
+  min-width: 0;
+  aspect-ratio: var(--pt-image-ratio);
+  transform: translateY(calc((1 - var(--rise, 1)) * var(--pt-rise-offset)));
+  opacity: calc(0.2 + var(--rise, 1) * 0.8);
+  will-change: transform, opacity;
+}
+
+.pt-stack[data-rise='false'] .pt-stack__media {
+  transform: none;
+  opacity: 1;
+}
+
+.pt-stack .pt-stack__media .pt-stack__img {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  margin: 0;
+  object-fit: contain;
+}
+
+.pt-stack .pt-stack__body {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.pt-stack .pt-stack__body .pt-stack__eyebrow {
+  margin: 0 0 16px;
+  padding: 0;
+  font-size: var(--pt-eyebrow-size);
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--pt-eyebrow);
+}
+
+.pt-stack .pt-stack__body .pt-stack__title {
+  margin: 0;
+  padding: 0;
+  font-size: var(--pt-title-size);
+  font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  color: var(--pt-title);
+  word-break: keep-all;
+}
+
+.pt-stack .pt-stack__title .pt-stack__mark {
+  background: linear-gradient(transparent 56%, var(--pt-mark) 56%);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.pt-stack .pt-stack__body .pt-stack__desc {
+  margin: 32px 0 0;
+  padding: 0;
+  font-size: var(--pt-desc-size);
+  line-height: 1.8;
+  color: var(--pt-desc);
+  word-break: keep-all;
+}
+
+@media (max-width: 768px) {
+  .pt-stack .pt-stack__card {
+    border-radius: min(var(--pt-radius), 24px);
+  }
+
+  .pt-stack .pt-stack__card .pt-stack__panel {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+    padding: 32px 24px;
+  }
+
+  .pt-stack .pt-stack__media {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  .pt-stack .pt-stack__body .pt-stack__eyebrow {
+    margin-bottom: 8px;
+    font-size: min(var(--pt-eyebrow-size), 14px);
+  }
+
+  .pt-stack .pt-stack__body .pt-stack__title {
+    font-size: min(var(--pt-title-size), 20px);
+  }
+
+  .pt-stack .pt-stack__body .pt-stack__desc {
+    margin-top: 16px;
+    font-size: min(var(--pt-desc-size), 14px);
+  }
+}
+
+/* 모션 최소화 설정: 고정·전환 없이 카드를 세로로 나열 */
+@media (prefers-reduced-motion: reduce) {
+  .pt-stack .pt-stack__track { height: auto; }
+  .pt-stack .pt-stack__stage { position: static; transform: none; }
+  .pt-stack .pt-stack__card { display: block; }
+  .pt-stack .pt-stack__card .pt-stack__panel {
+    transform: none;
+    opacity: 1;
+    box-shadow: none;
+  }
+  .pt-stack .pt-stack__card .pt-stack__media {
+    transform: none;
+    opacity: 1;
+  }
+}
+</style>
+
+<script>
+(function () {
+  var DEFAULT_DISTANCE = 700;
+  var MIN_PIN_TOP = 16;
+  var PIN_TOLERANCE = 2;
+  var ENTER_RANGE = 0.8;
+
+  function clamp01(value) {
+    if (value < 0) return 0;
+    if (value > 1) return 1;
+    return value;
+  }
+
+  function initStack(root) {
+    if (root.getAttribute('data-ready') === 'true') return;
+    var track = root.querySelector('.pt-stack__track');
+    var stage = root.querySelector('.pt-stack__stage');
+    var panels = root.querySelectorAll('.pt-stack__panel');
+    if (!track || !stage || panels.length === 0) return;
+    root.setAttribute('data-ready', 'true');
+
+    var distance = parseFloat(root.getAttribute('data-distance')) || DEFAULT_DISTANCE;
+    var maxShift = (panels.length - 1) * distance;
+    var useJsPin = false;
+    var running = false;
+    var rafId = 0;
+    var lastTop = null;
+    var lastVh = null;
+
+    function isMotionOff() {
+      return window.getComputedStyle(stage).position === 'static';
+    }
+
+    function measure() {
+      root.style.setProperty('--pt-track-h', (stage.offsetHeight + maxShift) + 'px');
+      lastTop = null;
+    }
+
+    // 상위 요소의 overflow 때문에 sticky 가 풀리면 transform 고정으로 전환
+    function checkPin(pinTop, scrolled) {
+      if (useJsPin || scrolled <= 0 || scrolled >= maxShift) return;
+      var top = stage.getBoundingClientRect().top;
+      if (Math.abs(top - pinTop) <= PIN_TOLERANCE) return;
+      useJsPin = true;
+      root.setAttribute('data-pin', 'js');
+    }
+
+    function update() {
+      if (isMotionOff()) return;
+      var vh = window.innerHeight;
+      var trackTop = track.getBoundingClientRect().top;
+      if (trackTop === lastTop && vh === lastVh) return;
+      lastTop = trackTop;
+      lastVh = vh;
+
+      var stageH = stage.offsetHeight;
+      var pinTop = Math.max(MIN_PIN_TOP, (vh - stageH) / 2);
+      root.style.setProperty('--pt-pin-top', pinTop + 'px');
+
+      var scrolled = Math.min(Math.max(pinTop - trackTop, 0), maxShift);
+      checkPin(pinTop, scrolled);
+      stage.style.transform = useJsPin ? 'translateY(' + scrolled + 'px)' : '';
+
+      var stageTop = trackTop + (useJsPin ? scrolled : 0);
+      var enter = clamp01((vh - stageTop) / (stageH * ENTER_RANGE));
+      panels[0].style.setProperty('--rise', String(enter));
+
+      for (var i = 1; i < panels.length; i++) {
+        var progress = clamp01((scrolled - (i - 1) * distance) / distance);
+        panels[i].style.setProperty('--slide', String(progress));
+        panels[i].style.setProperty('--rise', String(progress));
+        panels[i - 1].style.setProperty('--q', String(progress));
+      }
+    }
+
+    function loop() {
+      update();
+      if (running) rafId = requestAnimationFrame(loop);
+    }
+
+    function start() {
+      if (running) return;
+      running = true;
+      rafId = requestAnimationFrame(loop);
+    }
+
+    function stop() {
+      running = false;
+      cancelAnimationFrame(rafId);
+      lastTop = null;
+      update();
+    }
+
+    measure();
+    update();
+
+    if ('ResizeObserver' in window) {
+      new ResizeObserver(measure).observe(stage);
+    } else {
+      window.addEventListener('resize', measure);
+    }
+
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        for (var i = 0; i < entries.length; i++) {
+          if (entries[i].isIntersecting) start();
+          else stop();
+        }
+      }).observe(track);
+    } else {
+      window.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+    }
+  }
+
+  function initAll() {
+    var roots = document.querySelectorAll('.pt-stack');
+    for (var i = 0; i < roots.length; i++) initStack(roots[i]);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAll);
+  } else {
+    initAll();
+  }
+})();
+</script>
