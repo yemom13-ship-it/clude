@@ -1,0 +1,20 @@
+<section class="iw-stack" aria-label="서비스 소개" data-distance="{{text-scroll-distance}}" data-rise="{{switch-image-rise}}" data-image-pos="{{segment-image-pos}}" data-ratio="{{select-image-ratio}}">
+  <div class="iw-stack__track">
+    <div class="iw-stack__stage">
+      <div class="iw-stack__card">
+        {{#each item-panels}}
+        <article class="iw-stack__panel">
+          <div class="iw-stack__media">
+            <img class="iw-stack__img" src="{{image}}" alt="{{alt-text}}" />
+          </div>
+          <div class="iw-stack__body">
+            <p class="iw-stack__eyebrow">{{eyebrow}}</p>
+            <h3 class="iw-stack__title" data-break="{{mark-break}}">{{title}}<br class="iw-stack__br" /> <span class="iw-stack__mark">{{title-mark}}</span></h3>
+            <div class="iw-stack__desc editor-content">{{desc}}</div>
+          </div>
+        </article>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</section>

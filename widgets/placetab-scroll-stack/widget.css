@@ -1,0 +1,195 @@
+:where(*, *::before, *::after) {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.iw-stack {
+  --color-card-bg: {{color-card-bg}};
+  --color-eyebrow: {{color-eyebrow}};
+  --color-title: {{color-title}};
+  --color-mark: {{color-mark}};
+  --color-desc: {{color-desc}};
+  --eyebrow-size: {{text-eyebrow-size}}px;
+  --title-size: {{text-title-size}}px;
+  --desc-size: {{text-desc-size}}px;
+  --radius-card: {{text-radius}}px;
+  --card-width: {{text-card-width}}px;
+  --rise-offset: 90px;
+  --prev-shift: 40px;
+  position: relative;
+  width: 100%;
+  background: transparent;
+}
+
+.iw-stack .iw-stack__track {
+  position: relative;
+  height: var(--track-h, auto);
+}
+
+.iw-stack .iw-stack__stage {
+  position: sticky;
+  top: var(--pin-top, 16px);
+  width: 100%;
+  max-width: var(--card-width);
+  margin: 0 auto;
+  will-change: transform;
+}
+
+.iw-stack[data-pin='js'] .iw-stack__stage {
+  position: relative;
+  top: 0;
+}
+
+.iw-stack .iw-stack__card {
+  display: grid;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+  background: var(--color-card-bg);
+  box-shadow: 0 24px 60px rgba(15, 30, 60, 0.18);
+}
+
+/* 모든 패널을 같은 칸에 겹쳐 카드 높이 = 가장 긴 패널 */
+.iw-stack .iw-stack__card .iw-stack__panel {
+  grid-area: 1 / 1;
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  padding: 72px 96px;
+  overflow: hidden;
+  background: var(--color-card-bg);
+  transform: translateY(calc((1 - var(--slide, 1)) * 100% - var(--q, 0) * var(--prev-shift)));
+  opacity: calc(1 - var(--q, 0) * 0.7);
+  will-change: transform, opacity;
+}
+
+.iw-stack .iw-stack__card .iw-stack__panel:nth-child(n + 2) {
+  --slide: 0;
+  box-shadow: 0 -16px 40px rgba(15, 30, 60, 0.08);
+}
+
+.iw-stack[data-image-pos='right'] .iw-stack__card .iw-stack__panel {
+  flex-direction: row-reverse;
+}
+
+.iw-stack .iw-stack__media {
+  flex: 0 0 46%;
+  min-width: 0;
+  aspect-ratio: 4 / 3;
+  transform: translateY(calc((1 - var(--rise, 1)) * var(--rise-offset)));
+  opacity: calc(0.2 + var(--rise, 1) * 0.8);
+  will-change: transform, opacity;
+}
+
+.iw-stack[data-ratio='r1-1'] .iw-stack__media { aspect-ratio: 1 / 1; }
+.iw-stack[data-ratio='r3-4'] .iw-stack__media { aspect-ratio: 3 / 4; }
+.iw-stack[data-ratio='r16-9'] .iw-stack__media { aspect-ratio: 16 / 9; }
+
+.iw-stack[data-rise='false'] .iw-stack__media {
+  transform: none;
+  opacity: 1;
+}
+
+.iw-stack .iw-stack__media .iw-stack__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.iw-stack .iw-stack__body {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.editor-content :where(p, strong, em, u, s, del) { color: inherit; }
+.editor-content p { display: block; }
+.editor-content strong { font-weight: 700; }
+.editor-content em { font-style: italic; }
+.editor-content u { text-decoration: underline; }
+.editor-content s,
+.editor-content del { text-decoration: line-through; }
+
+.iw-stack .iw-stack__body .iw-stack__eyebrow {
+  margin-bottom: 16px;
+  font-size: var(--eyebrow-size);
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--color-eyebrow);
+}
+
+.iw-stack .iw-stack__body .iw-stack__title {
+  font-size: var(--title-size);
+  font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  color: var(--color-title);
+  word-break: keep-all;
+}
+
+.iw-stack .iw-stack__title .iw-stack__br { display: none; }
+.iw-stack .iw-stack__title[data-break='true'] .iw-stack__br { display: inline; }
+
+.iw-stack .iw-stack__title .iw-stack__mark {
+  background: linear-gradient(transparent 56%, var(--color-mark) 56%);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.iw-stack .iw-stack__body .iw-stack__desc {
+  margin-top: 32px;
+  font-size: var(--desc-size);
+  line-height: 1.8;
+  color: var(--color-desc);
+  word-break: keep-all;
+}
+
+.iw-stack .iw-stack__body .iw-stack__desc p { margin: 0; }
+
+@media (max-width: 768px) {
+  .iw-stack .iw-stack__card {
+    border-radius: min(var(--radius-card), 24px);
+  }
+
+  .iw-stack[data-image-pos] .iw-stack__card .iw-stack__panel {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+    padding: 32px 24px;
+  }
+
+  .iw-stack .iw-stack__media {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  .iw-stack .iw-stack__body .iw-stack__eyebrow {
+    margin-bottom: 8px;
+    font-size: min(var(--eyebrow-size), 14px);
+  }
+
+  .iw-stack .iw-stack__body .iw-stack__title {
+    font-size: min(var(--title-size), 18px);
+  }
+
+  .iw-stack .iw-stack__body .iw-stack__desc {
+    margin-top: 16px;
+    font-size: min(var(--desc-size), 14px);
+  }
+}
+
+/* 모션 최소화 설정: 고정·전환 없이 패널을 세로로 나열 */
+@media (prefers-reduced-motion: reduce) {
+  .iw-stack .iw-stack__track { height: auto; }
+  .iw-stack .iw-stack__stage { position: static; transform: none; }
+  .iw-stack .iw-stack__card { display: block; }
+  .iw-stack .iw-stack__card .iw-stack__panel {
+    transform: none;
+    opacity: 1;
+    box-shadow: none;
+  }
+  .iw-stack .iw-stack__card .iw-stack__media {
+    transform: none;
+    opacity: 1;
+  }
+}

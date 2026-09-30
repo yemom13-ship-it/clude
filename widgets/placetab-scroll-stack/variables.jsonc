@@ -1,0 +1,94 @@
+{
+  "아이템": {
+    "opened": true,
+    "children": {
+      // 스크롤하면 다음 카드가 아래에서 올라와요
+      "item-panels": {
+        "type": "item",
+        "label": "카드 목록",
+        "maxLength": 10,
+        "fields": {
+          "eyebrow": { "type": "textfield", "label": "서브 텍스트", "placeholder": "서브 텍스트 입력" },
+          "title": { "type": "textfield", "label": "타이틀", "placeholder": "타이틀 문구 입력" },
+          "title-mark": { "type": "textfield", "label": "타이틀 강조 문구", "placeholder": "미입력 시 미노출" },
+          "mark-break": { "type": "switch", "label": "강조 문구 줄바꿈" },
+          "desc": { "type": "text-editor", "label": "내용" },
+          "image": { "type": "image", "label": "이미지" },
+          "alt-text": { "type": "textfield", "label": "이미지 대체 텍스트", "placeholder": "이미지 대체 텍스트 입력" }
+        },
+        "default": [
+          {
+            "eyebrow": "다양한 마케팅 채널 운영",
+            "title": "네이버 & 당근마켓 & 카카오",
+            "title-mark": "SA & DA 퍼포먼스 마케팅 대행",
+            "mark-break": true,
+            "desc": "플랫폼별 특성에 맞는 전략 설계와\n\n다양한 채널 노출 운영으로\n\n매출 성장을 체계적으로 지원합니다.",
+            "image": "",
+            "alt-text": "네이버·당근마켓·카카오 채널 운영 일러스트"
+          },
+          {
+            "eyebrow": "5:1 전문 멘토링 시스템",
+            "title": "빠른 소통은",
+            "title-mark": "성장의 기본입니다",
+            "mark-break": false,
+            "desc": "분야별 전문 마케터의 체계적인 운영으로\n\n퍼포먼스,바이럴,콘텐츠,AE,기획까지\n\n브랜드 상황에 맞는 전략을 빠르게 설계합니다.",
+            "image": "",
+            "alt-text": "5:1 전문 멘토링 시스템 일러스트"
+          }
+        ]
+      }
+    }
+  },
+  "텍스트": {
+    "opened": false,
+    "children": {
+      "text-eyebrow-size": { "type": "textfield", "label": "서브 텍스트 크기", "default": "18", "placeholder": "18", "suffix": "px" },
+      "color-eyebrow": { "type": "color", "label": "서브 텍스트 컬러", "default": "#2F6BF0FF" },
+      "text-title-size": { "type": "textfield", "label": "타이틀 크기", "default": "40", "placeholder": "40", "suffix": "px" },
+      "color-title": { "type": "color", "label": "타이틀 컬러", "default": "#1A1A1AFF" },
+      "color-mark": { "type": "color", "label": "타이틀 강조 배경 컬러", "default": "#DCE8FFFF" },
+      "text-desc-size": { "type": "textfield", "label": "내용 크기", "default": "18", "placeholder": "18", "suffix": "px" },
+      "color-desc": { "type": "color", "label": "내용 컬러", "default": "#444444FF" }
+    }
+  },
+  "이미지": {
+    "opened": false,
+    "children": {
+      "select-image-ratio": {
+        "type": "select",
+        "label": "이미지 비율",
+        "default": "r4-3",
+        "values": ["r1-1", "r4-3", "r3-4", "r16-9"],
+        "valueNames": ["1:1", "4:3", "3:4", "16:9"]
+      },
+      "segment-image-pos": {
+        "type": "segment",
+        "label": "이미지 위치",
+        "default": "left",
+        "values": ["left", "right"],
+        "valueNames": ["왼쪽", "오른쪽"]
+      }
+    }
+  },
+  "배경": {
+    "opened": false,
+    "children": {
+      "color-card-bg": { "type": "color", "label": "카드 배경 컬러", "default": "#FFFFFFFF" },
+      "text-radius": { "type": "textfield", "label": "모서리 둥글기", "default": "40", "placeholder": "40", "suffix": "px" }
+    }
+  },
+  "카드 레이아웃": {
+    "opened": false,
+    "children": {
+      "text-card-width": { "type": "textfield", "label": "카드 최대 너비", "default": "1240", "placeholder": "1240", "suffix": "px" }
+    }
+  },
+  "스크롤 애니메이션": {
+    "opened": false,
+    "children": {
+      // 값이 클수록 천천히 넘어가요
+      "text-scroll-distance": { "type": "textfield", "label": "전환 스크롤 거리", "default": "700", "placeholder": "700", "suffix": "px" },
+      "switch-image-rise": { "type": "switch", "label": "이미지 아래에서 올라오기", "default": true }
+    }
+  }
+}
